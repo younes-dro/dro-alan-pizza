@@ -1,0 +1,208 @@
+/*
+Theme Name: alan-pizza
+Theme URI: https://github.com/younes-dro/dro-alan-pizza
+Author: Younés DRO
+Author URI: http://www.dro.123.fr
+Description: Theme for a pizza web store 
+Version: 1.0
+Template: dro-caterer
+Text Domain: dro-alan-pizza
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+@import url('../dro-caterer/style.css');
+
+/*
+* Custom style for alan-pizza
+*/
+/*--------------------------------------------------------------
+# Mobile Menu
+--------------------------------------------------------------*/
+.wp_mm_wrapper.active{
+    z-index: 9999;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.site-header{
+    /*border: 1px solid #0F0;*/
+    position: relative;
+}
+.site-header nav{
+    z-index: 999;
+}
+section.phone{
+    /*background-color: #e41d25;*/ 
+    width: 40%;
+    margin: 0 auto; 
+    padding: 5px 0;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 1s;
+
+}
+section.phone h1.phone-number{
+    color: #fff;
+    font-size: .9rem;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+.header-image img{
+    display: block;
+    margin: 0 auto;
+}
+.site-branding{
+    text-align: center;
+    margin: 0 auto;
+    padding: 6rem 0 0 0;
+    background-color: #fff;
+
+}
+/* if the header image is displayed as background image */
+.header-background-image{
+    background: no-repeat center;
+    background-size: cover!important;
+    -moz-background-size: cover!important;
+    -webkit-background-size: cover!important;
+    height: 40vh;
+    object-fit: cover;
+}
+.header-background-image .title-box{
+    background-color: hsla(0, 0%, 0%, 0.6);
+}
+.title-box{
+
+    margin: 0 auto;
+    width: 600px;
+    max-width: 75%;
+    padding: .9rem;
+    border: 2px solid  hsla(0, 0%, 0%, 0.6);
+}
+p.site-title,
+h1.site-title{
+    font-family: 'hotpizza';
+    font-size: 1.5rem;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.site-title a{
+    color: #fff;
+}
+p.site-description{
+    font-size: 1rem;
+    font-weight: 800;
+    margin: 0 auto;
+    padding: 0;
+    color: #c4c6c2;
+    font-family: 'Coourgette-Regular';
+}
+.custom-logo-link{
+    /*border: 1px solid #f00;*/
+    display: inline-block; /* Make sure logo link wraps around logo image. */
+    position: absolute;
+    top: 0px;
+    max-width: 100px;
+    height: auto;
+    transition: all 1s;
+    z-index: 999;
+}
+
+@media screen and (max-width: 576px){
+
+}
+@media screen and (min-width: 768px ) {
+
+    section.phone{
+        width: 40%;
+        background-color: hsla(358, 77%, 50%, 0.60);
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        /* color: #eee; */
+    }
+    section.phone h1.phone-number{
+        font-size: 1.5rem;
+    }
+    .header-background-image{
+        height: 40vh;
+    }
+    .title-box{
+        padding: 1rem;
+    }
+    p.site-title,
+    h1.site-title{
+        font-size: 2rem;
+    }
+    p.site-description{
+        font-size: 2rem;
+    }
+    .custom-logo-link{
+        top: 0;
+        max-width: 150px;
+        height: auto;
+        left: 0;
+    }
+}
+@media screen and (min-width: 992px){
+    section.phone{
+        width: 40%;
+        background-color: hsla(358, 77%, 50%, 0.60);
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 50px;
+        /* color: #eee; */
+    }
+    section.phone h1.phone-number{
+        font-size: 2rem;
+    }    
+    .header-background-image{
+        height: 60vh;
+        position: relative;
+    }
+    .site-branding{
+        padding: 5rem 0;
+    }
+    .title-box{
+        padding: 1rem 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    p.site-title,
+    h1.site-title{
+        font-size: 3rem;
+    }
+    p.site-description{
+        font-size: 2.5rem;
+    }
+    .custom-logo-link{
+        top: 50px;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 992px) and (orientation: landscape) {
+    .header-background-image{
+        height: 60vh;
+    }
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation a {
+    display: block;
+    padding: 1em .8em;
+    font-size: 14px;
+    /* font-size: 1rem; */
+    text-decoration: none;
+    line-height: 1.3em;
+    color: #ff9a00;
+}
