@@ -3,7 +3,7 @@ Theme Name: alan-pizza
 Theme URI: https://github.com/younes-dro/dro-alan-pizza
 Author: Younés DRO
 Author URI: http://www.dro.123.fr
-Description: Theme for a pizza web store 
+Description: Theme for a pizza web store
 Version: 1.0
 Template: dro-caterer
 Text Domain: dro-alan-pizza
@@ -16,6 +16,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /*
 * Custom style for alan-pizza
 */
+.site-content{
+    padding: 20px 0;
+}
 /*--------------------------------------------------------------
 # Mobile Menu
 --------------------------------------------------------------*/
@@ -30,13 +33,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     /*border: 1px solid #0F0;*/
     position: relative;
 }
-.site-header nav{
-    z-index: 999;
-}
 section.phone{
-    /*background-color: #e41d25;*/ 
+    /*background-color: #e41d25;*/
     width: 40%;
-    margin: 0 auto; 
+    margin: 0 auto;
     padding: 5px 0;
     z-index: 999;
     position: absolute;
@@ -111,7 +111,7 @@ p.site-description{
     max-width: 100px;
     height: auto;
     transition: all 1s;
-    z-index: 999;
+    z-index: 99999;
 }
 
 @media screen and (max-width: 576px){
@@ -151,6 +151,10 @@ p.site-description{
     }
 }
 @media screen and (min-width: 992px){
+    .site-header nav{
+        z-index: 9999;
+        padding-right: 150px;
+    }
     section.phone{
         width: 40%;
         background-color: hsla(358, 77%, 50%, 0.60);
@@ -162,7 +166,7 @@ p.site-description{
     }
     section.phone h1.phone-number{
         font-size: 2rem;
-    }    
+    }
     .header-background-image{
         height: 60vh;
         position: relative;
@@ -185,7 +189,7 @@ p.site-description{
         font-size: 2.5rem;
     }
     .custom-logo-link{
-        top: 50px;
+        top: 0px;
     }
 }
 @media only screen and (min-width: 320px) and (max-width: 992px) and (orientation: landscape) {
@@ -205,4 +209,94 @@ p.site-description{
     text-decoration: none;
     line-height: 1.3em;
     color: #ff9a00;
+}
+
+/*--------------------------------------------------------------
+# Front Page , single , post type
+--------------------------------------------------------------*/
+.element-pizza{
+    /* border: 1px solid; */
+    margin: 0 0 20px 0;
+    /* border-bottom: 1px solid orange; */
+    border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #7ac1b7 20%, #7ac1b7 50%, #7ac1b7 80%, rgba(0, 0, 0, 0) 100%) 0 0 1 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+.details-element-pizza{
+    text-align: center;
+}
+.details-element-pizza .pizza-image img{
+    max-width: 150px;
+}
+.details-element-pizza .pizza-title{
+    color: #d97e02;
+    font-family: 'Montserrat-Regular';
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+.page-header{
+    margin: 0 auto;
+    border: none;
+}
+.page-header > h1{ font-family: 'Courgette', cursive;  font-size: 2rem; color: #24711f; text-align: center; margin-top: 15px; margin-bottom: 40px}
+.page-header > h1 > span.red{ color: #fe2813}
+.price-promo{
+    font-size: 14px;
+    text-decoration: line-through;
+    color: hsl(0, 100%, 50%);
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.price{
+    font-size: 18px;
+    color: hsl(16, 100%, 50%);
+    /* color: #F00; */
+    font-weight: 600;
+    font-family: sans-serif
+}
+span.fa{
+    color: #4d4d4d;
+}
+
+// Modal 
+.modal-dialog{
+    
+}
+.modal-title{
+    
+    color: #d97e02;
+    font-family: 'Montserrat-Regular';
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+.element-pizza .modal-body{
+    text-align: center;
+}
+.element-pizza .modal-body p{
+    margin-top: 1rem;
+    color: #717171;
+}
+.element-pizza .modal-body img{
+    max-width: 150px;
+}
+
+@media screen and (min-width:768px){
+    .page-header h1{
+        font-weight: 2rem;
+    }
+}
+
+/*--------------------------------------------------------------
+# Side bar front page 
+--------------------------------------------------------------*/
+.aside-img-container{
+        
+    margin: 5px 0 5px 0
+}
+.aside-img-container img{
+    display: block;
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
 }

@@ -12,20 +12,20 @@
 
 </div><!-- #content -->
 
-<footer id="colophon" class="site-footer">
-    <div class="site-info">
-        <a href="<?php echo esc_url(__('https://wordpress.org/', 'dro-caterer')); ?>">
+<footer id="colophon" class="site-footer" style="border:1px solid #F00">
+    <div class="row">
+
+    </div>
+    <div class="row">
+        <div class="col-12">
+        <div class="site-info">
             <?php
-            /* translators: %s: CMS name, i.e. WordPress. */
-            printf(esc_html__('Proudly powered by %s', 'dro-caterer'), 'WordPress');
+            /* translators: 1: Theme name, 2: Theme author. */
+            printf(esc_html__('Theme: %1$s by %2$s.', 'dro-caterer'), 'dro-caterer', '<a href="http://www.dro.123.fr">caterer theme</a>');
             ?>
-        </a>
-        <span class="sep"> | </span>
-        <?php
-        /* translators: 1: Theme name, 2: Theme author. */
-        printf(esc_html__('Theme: %1$s by %2$s.', 'dro-caterer'), 'dro-caterer', '<a href="http://www.dro.123.fr">caterer theme</a>');
-        ?>
-    </div><!-- .site-info -->
+        </div><!-- .site-info -->
+        </div><!-- ./col-12-->
+    </div><!-- ./row -->
 </footer><!-- #colophon -->
 </div><!-- .container-fluid-->
 </div><!-- #page -->
