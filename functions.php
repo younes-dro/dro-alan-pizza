@@ -19,7 +19,9 @@ if (!function_exists('dro_alan_pizza_scripts')) {
         /*
          * JS
          */
-//        wp_enqueue_script('wow-js', CHILD_THEME_URI . '/assets/js/wow/wow.min.js', array('jquery'));
+        wp_dequeue_script('dro-caterer-js');
+        wp_deregister_script('dro-caterer-js');
+        wp_enqueue_script('dro-alan-pizza-js', CHILD_THEME_URI . '/js/dro-alan-pizza.js', array('jquery'),'20181911',TRUE);
 
         if (is_front_page()) {
 //            wp_enqueue_script('alan-pizza-js', CHILD_THEME_URI . '/assets/js/alan-pizza/alan-pizza.js', array('jquery'));
@@ -27,7 +29,7 @@ if (!function_exists('dro_alan_pizza_scripts')) {
     }
 
 }
-add_action('wp_enqueue_scripts', 'dro_alan_pizza_scripts');
+add_action('wp_enqueue_scripts', 'dro_alan_pizza_scripts',20);
 
 
 /**

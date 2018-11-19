@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(array('col-12 col-md-4')); ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -33,7 +33,7 @@
 
 	<div class="entry-content">
 		<?php
-		the_content( sprintf(
+                            the_excerpt( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
 				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'dro-caterer' ),

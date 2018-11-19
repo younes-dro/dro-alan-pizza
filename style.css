@@ -19,6 +19,18 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .site-content{
     padding: 20px 0;
 }
+h2.entry-title{
+    text-align: center;
+    margin-bottom: 1rem
+}
+h2.entry-title a{
+    color: #4169e1;
+    font-size: 1.5rem;
+    font-family: 'Montserrat-Regular';
+}
+h2.entry-title a:hover{
+    color: #0037de;
+}
 /*--------------------------------------------------------------
 # Mobile Menu
 --------------------------------------------------------------*/
@@ -38,8 +50,8 @@ section.phone{
     width: 40%;
     margin: 0 auto;
     padding: 5px 0;
-    z-index: 999;
-    position: absolute;
+    z-index: 9999;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -106,8 +118,9 @@ p.site-description{
 .custom-logo-link{
     /*border: 1px solid #f00;*/
     display: inline-block; /* Make sure logo link wraps around logo image. */
-    position: absolute;
+    position: fixed;
     top: 0px;
+    left: 0;
     max-width: 100px;
     height: auto;
     transition: all 1s;
@@ -118,17 +131,19 @@ p.site-description{
 
 }
 @media screen and (min-width: 768px ) {
-
+    #toggle-menu-container{
+        width: 100%;
+    }
     section.phone{
-        width: 40%;
-        background-color: hsla(358, 77%, 50%, 0.60);
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        /* color: #eee; */
+        /*        width: 40%;
+                background-color: hsla(358, 77%, 50%, 0.60);
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                 color: #eee; */
     }
     section.phone h1.phone-number{
-        font-size: 1.5rem;
+        /*font-size: 1.5rem;*/
     }
     .header-background-image{
         height: 40vh;
@@ -144,10 +159,10 @@ p.site-description{
         font-size: 2rem;
     }
     .custom-logo-link{
-        top: 0;
+        /*top: 0;*/
         max-width: 150px;
         height: auto;
-        left: 0;
+        /*left: 0;*/
     }
 }
 @media screen and (min-width: 992px){
@@ -163,6 +178,8 @@ p.site-description{
         right: 0;
         top: 50px;
         /* color: #eee; */
+        position: absolute;
+        z-index: 999;
     }
     section.phone h1.phone-number{
         font-size: 2rem;
@@ -201,6 +218,30 @@ p.site-description{
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+.main-navigation{
+    background: hsla(0, 0%, 0%, 0.7);
+}
+.main-navigation.sticky-header,
+.toggle-menu-container-class.sticky-header{
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    width: 100%;
+    background: hsla(0, 0%, 0%, 0.7);
+    /*box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);*/
+    animation:slide-down 0.7s;
+    z-index: 9999;
+}
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    } 
+    100% {
+        opacity: 0.9;
+        transform: translateY(0);
+    } 
+}
 .main-navigation a {
     display: block;
     padding: 1em .8em;
@@ -260,10 +301,10 @@ span.fa{
 
 // Modal 
 .modal-dialog{
-    
+
 }
 .modal-title{
-    
+
     color: #d97e02;
     font-family: 'Montserrat-Regular';
     font-weight: 900;
@@ -288,10 +329,41 @@ span.fa{
 }
 
 /*--------------------------------------------------------------
+# Archive page
+--------------------------------------------------------------*/
+.archive .page-header > h1{
+    position: relative;
+}
+.archive-description p{
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+.archive a.post-thumbnail img{
+    max-width: 150px;
+    height: auto;
+}
+.archive .hentry {
+    text-align: center;
+}
+.archive span.price-type-menu{
+    color: #fff;
+    display: block;
+    /*border: 1px solid #F0F;*/
+    background-image: url(images/price.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10px center;
+    width: 150px;
+    height: 80px;
+    margin: 0 auto;
+    padding-top: 10px;
+    font-size: 3rem;
+}
+/*--------------------------------------------------------------
 # Side bar front page 
 --------------------------------------------------------------*/
 .aside-img-container{
-        
+
     margin: 5px 0 5px 0
 }
 .aside-img-container img{

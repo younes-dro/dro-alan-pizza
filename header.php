@@ -20,11 +20,11 @@
     </head>
 
     <body <?php body_class(); ?>>
-        <div id="page" class="site">
+<div id="page" class="site">
             <div class="container-fluid">
                 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'dro-alan-pizza'); ?></a>
                 <header id="masthead" class="site-header">
-                    <nav id="site-navigation" class="main-navigation" role="navigation">
+                    <nav id="site-navigation" class="main-navigation sticky-active" role="navigation">
                         <?php
                         wp_nav_menu(array(
                             'theme_location' => 'menu-1',
