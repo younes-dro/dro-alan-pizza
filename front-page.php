@@ -10,12 +10,11 @@
  */
 get_header();
 ?>
+<div class="container-fluid">
 <div class="row">
     <div class="col-lg-9">
         <div id="primary" class="content-area">
             <main id="main" class="site-main">
-
-                <?php //require 'template-parts/front-page/pizza-promo.php ' ?>
                 <?php
                 $promo = new WP_Query(array(
                     'posts_per_page' => 6,
@@ -58,11 +57,12 @@ get_header();
                 ?>
             </main><!-- #main -->
         </div><!-- #primary -->
-    </div><!-- .col- -->
+    </div><!-- .col-lg-9 -->
     <div class="col-lg-3">
         <?php get_sidebar('front-page'); ?>
     </div>
 </div><!-- .row -->
+</div><!-- ./ container-fluid -->
 <?php
 get_footer();
 
