@@ -33,8 +33,11 @@
                         ?>
                     </nav><!-- #site-navigation -->
                     <section class="phone">
-                        <h1 class="phone-number">06 70 79 40 50</h1>
-                        <h1 class="phone-number">01 34 25 03 32</h1>
+                        <h1 class="phone-number">
+                            <i class="fa fa-phone-square"></i>
+                            <a href="tel:0033670794050">06 70 79 40 50</a>
+                            <a href="tel:0033134250332">01 34 25 03 32</a>
+                        </h1>
                     </section>
                     
                     <?php the_custom_logo() ?>

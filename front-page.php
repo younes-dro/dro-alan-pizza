@@ -23,7 +23,7 @@ get_header();
                     'meta_key' => 'promo',
                     'meta_value' => 'yes'
                 ));
-                dro_alan_pizza_element_pizza($promo, 'Promotions', 'red');
+                dro_alan_pizza_element_pizza($promo, 'Nos Pizzas en Promo', 'red' , 'promo');
                 ?>
                 <?php
                 $creme_fraiche = new WP_Query(array(

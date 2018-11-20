@@ -1,6 +1,7 @@
 <?php
 
 define('CHILD_THEME_URI', get_stylesheet_directory_uri());
+define ('CUSTOM_IMAGES_PATH' , CHILD_THEME_URI . '/images');
 
 
 if (!function_exists('dro_alan_pizza_scripts')) {

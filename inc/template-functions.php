@@ -4,18 +4,39 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
     /**
      * Generate a Pizza details
      */
-    function dro_alan_pizza_element_pizza($query, $title, $colors) {
+    function dro_alan_pizza_element_pizza($query, $title, $colors, $promo = '', $come_from = '') {
 
         if ($query->have_posts()) {
             ?>
             <div class="container-fluid element-pizza">
                 <div class="row">
                     <div class="col-12">
-                        <div class="page-header"><h1><span class="<?php echo $colors ?>"><?php echo $title ?></span></h1></div>
+                        <div class="page-header">
+                            <?php
+                            if ($come_from == 'page-promo') {
+                                ?>
+                            <h1>Nos Pizzas en promotions</h1>
+                            <?php 
+                            } else {
+                                ?>
+                                <h1>
+                                    <span class="<?php echo $colors ?>"><?php echo $title ?></span>
+                                    <?php
+                                    if ($promo == 'promo'):
+                                        echo '<a href="/index.php/pizza-en-promo-a-vaureal/" class="see-all">Voir tout <i class="ion-ios-arrow-forward"></i></a>';
+                                    else:
+                                        echo '<a href="" class="see-all">Voir tout <i class="ion-ios-arrow-forward"></i></a>';
+                                    endif;
+                                    ?>
+                                </h1>
+                                <?php
+                            }
+                            ?>
+                        </div>
                     </div>
                 </div><!-- .row -->
                 <div class="row">
-                    <?php while ($query->have_posts()) { ?>
+                        <?php while ($query->have_posts()) { ?>
                         <article id="post-<?php the_ID(); ?>"  <?php post_class(array('col-xs-12 col-sm-6 col-md-4 ')); ?>>
                             <?php
                             $query->the_post();
@@ -24,7 +45,7 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
 
                             <a class="row details-element-pizza" href="#<?php echo basename(get_permalink()) ?>" data-toggle="modal" >
                                 <div class="col-12 pizza-image">
-                                    <?php the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle')) ?>
+                <?php the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle')) ?>
                                 </div><!-- .col-12 /. image-pizza-->
 
                                 <div class="col-12" >
@@ -36,13 +57,13 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                     </div>
                                     <div class="row ">
                                         <div class="col-12">
-                                            <?php echo dro_alan_pizza_price($meta['price_senior'][0], $meta['price_senior_promo'][0], 'male', $meta['promo'][0]) ?>
+                <?php echo dro_alan_pizza_price($meta['price_senior'][0], $meta['price_senior_promo'][0], 'male', $meta['promo'][0]) ?>
                                         </div>
                                         <div class="col-12">
-                                            <?php echo dro_alan_pizza_price($meta['price_famille'][0], $meta['price_famille_promo'][0], 'group') ?>
+                <?php echo dro_alan_pizza_price($meta['price_famille'][0], $meta['price_famille_promo'][0], 'group') ?>
                                         </div>
                                         <div class="col-12">
-                                            <?php echo dro_alan_pizza_price($meta['price_junior'][0], $meta['price_junior_promo'][0], 'child') ?>
+                <?php echo dro_alan_pizza_price($meta['price_junior'][0], $meta['price_junior_promo'][0], 'child') ?>
                                         </div>
                                     </div>
                                 </div>
@@ -59,10 +80,10 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-12">
-                                                    <?php the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle')) ?>
+                <?php the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle')) ?>
                                                 </div>
                                                 <div class="col-12">
-                                                    <?php the_excerpt() ?>
+                <?php the_excerpt() ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -74,7 +95,7 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                 </div>
                             </div><!-- End Modal content -->                                    
                         </article>
-                    <?php }// End while promo have_posts()  ?>
+            <?php }// End while promo have_posts()   ?>
                 </div><!-- /.row Promo -->
             </div><!-- .container / .element-pizza -->
             <?php
@@ -108,7 +129,8 @@ if (!function_exists('dro_alan_pizza_price')) {
 function get_the_type_menu_price($term_id) {
 
     $taxonmomy_price = get_option("taxonomy_" . $term_id);
-    if (is_null($taxonmomy_price['type_menu_price'])) return '';
-    
-    return '<span class="price-type-menu">'.$taxonmomy_price['type_menu_price'].'</span>';
+    if (is_null($taxonmomy_price['type_menu_price']))
+        return '';
+
+    return '<span class="price-type-menu">' . $taxonmomy_price['type_menu_price'] . '</span>';
 }
