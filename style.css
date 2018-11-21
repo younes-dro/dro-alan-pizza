@@ -290,6 +290,7 @@ p.site-description{
         transform: translateY(0);
     } 
 }
+
 .main-navigation a {
     display: block;
     padding: 1em .8em;
@@ -299,7 +300,32 @@ p.site-description{
     line-height: 1.3em;
     color: #ff9a00;
 }
-
+.main-navigation li:hover > a {
+    background-color: hsl(5, 99%, 54%);
+}
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_item > a:hover,
+.main-navigation .current-menu-item > a:hover {
+    color: #fff;
+    background-color: hsl(5, 99%, 54%);
+}
+.wp_mm_wrapper .current_page_item > a,
+.wp_mm_wrapper .current-menu-item > a,
+.wp_mm_wrapper .current_page_item > a:hover,
+.wp_mm_wrapper .current-menu-item > a:hover {
+    color: #fff;
+    border-left: 2px solid  #fe2813;
+}
+.wp_mm_wrapper ul.menu li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #fe2813 20%, #fe2813 50%, #fe2813 80%, rgba(0, 0, 0, 0) 100%) 0 0 1 0;   
+    height: 60px;
+}
+.wp_mm_wrapper ul.menu li.menu-item-has-children>a {
+    width: 60%;
+    height: 100%;
+}
 /*--------------------------------------------------------------
 # Front Page , single , post type
 --------------------------------------------------------------*/
@@ -307,7 +333,7 @@ p.site-description{
     /* border: 1px solid; */
     margin: 0 0 20px 0;
     /* border-bottom: 1px solid orange; */
-    border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #7ac1b7 20%, #7ac1b7 50%, #7ac1b7 80%, rgba(0, 0, 0, 0) 100%) 0 0 1 0;
+    border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #fe2813 20%, #fe2813 50%, #fe2813 80%, rgba(0, 0, 0, 0) 100%) 0 0 1 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 .details-element-pizza{
@@ -322,6 +348,11 @@ p.site-description{
     font-weight: 900;
     font-style: italic;
     font-size: 1.2rem;
+}
+.btn-details{
+    font-family: 'Lato', sans-serif;
+    margin: 4px;
+    font-weight: normal;
 }
 .page-header{
     margin: 0 auto;
@@ -343,6 +374,9 @@ p.site-description{
     font-weight: 600;
     font-family: sans-serif
 }
+del{
+    color: #717171;
+}
 span.fa{
     color: #4d4d4d;
 }
@@ -352,12 +386,14 @@ span.fa{
 
 }
 .modal-title{
-
     color: #d97e02;
-    font-family: 'Montserrat-Regular';
+    font-family: 'Lato', sans-serif;
     font-weight: 900;
     font-style: italic;
     font-size: 1.2rem;
+    margin: 0 auto;
+    /* border: 1px solid; */
+    text-align: center;
 }
 .element-pizza .modal-body{
     text-align: center;
@@ -369,10 +405,32 @@ span.fa{
 .element-pizza .modal-body img{
     max-width: 150px;
 }
-
+.modal-footer a{
+    background-color: #fe2813;
+    color: #fff;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+.modal-icon-phone{
+    color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.05);
+    float: left;
+    padding: 15px 13px;
+}
+.call-alanpizza{
+    padding: 13px 10px;
+    display: block;
+    float: left;
+    font-family: 'Lato', sans-serif;
+    
+}
 @media screen and (min-width:768px){
     .page-header h1{
         font-weight: 2rem;
+    }
+    .call-alanpizza{
+        padding: 15px 30px;
     }
 }
 

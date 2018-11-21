@@ -36,7 +36,7 @@
     });
     // Scroll to the top
     $('.scrollup').click(function () {
-        $("html, body").animate({scrollTop: 0});
+        $("html, body").animate({scrollTop: 0}, 200);
         return false;
     });
 

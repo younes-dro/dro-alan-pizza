@@ -44,8 +44,8 @@
 </footer><!-- #colophon -->
 
 </div><!-- #page -->
-
-<?php wp_footer(); ?>
 <a href="#" class="scrollup"><i class="fa fa-arrow-up"></i></a>
+<?php wp_footer(); ?>
+
 </body>
 </html>

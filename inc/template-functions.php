@@ -15,8 +15,8 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                             <?php
                             if ($come_from == 'page-promo') {
                                 ?>
-                            <h1>Nos Pizzas en promotions</h1>
-                            <?php 
+                                <h1>Nos Pizzas en promotions</h1>
+                                <?php
                             } else {
                                 ?>
                                 <h1>
@@ -36,7 +36,7 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                     </div>
                 </div><!-- .row -->
                 <div class="row">
-                        <?php while ($query->have_posts()) { ?>
+                    <?php while ($query->have_posts()) { ?>
                         <article id="post-<?php the_ID(); ?>"  <?php post_class(array('col-xs-12 col-sm-6 col-md-4 ')); ?>>
                             <?php
                             $query->the_post();
@@ -44,58 +44,85 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                             ?>
 
                             <a class="row details-element-pizza" href="#<?php echo basename(get_permalink()) ?>" data-toggle="modal" >
-                                <div class="col-12 pizza-image">
-                <?php the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle')) ?>
-                                </div><!-- .col-12 /. image-pizza-->
 
-                                <div class="col-12" >
-                                    <div class="row ">
+                                <div class="col-12">
+
+                                    <div class="row">
                                         <div class="col-12">
                                             <span class="pizza-title"><?php the_title() ?></span>
-                                            <span class="ion ion-plus-circled"></span>
-                                        </div>
-                                    </div>
-                                    <div class="row ">
-                                        <div class="col-12">
-                <?php echo dro_alan_pizza_price($meta['price_senior'][0], $meta['price_senior_promo'][0], 'male', $meta['promo'][0]) ?>
                                         </div>
                                         <div class="col-12">
-                <?php echo dro_alan_pizza_price($meta['price_famille'][0], $meta['price_famille_promo'][0], 'group') ?>
+                                            <button class=" btn-details btn btn-dark btn-light btn-sm">Détails </button>
+                                        </div>
+                                    </div><!-- /.row -->
+
+                                    <div class="row">
+                                        <div class="col-12 pizza-image">
+                                            <?php the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle')) ?>
+                                        </div><!-- .col-12 /. image-pizza-->
+                                    </div><!-- ./row-->
+
+                                    <div class="row list-prices">
+                                        <div class="col-12">
+                                            <?php echo dro_alan_pizza_price($meta['price_senior'][0], $meta['price_senior_promo'][0], 'male', $meta['promo'][0]) ?>
                                         </div>
                                         <div class="col-12">
-                <?php echo dro_alan_pizza_price($meta['price_junior'][0], $meta['price_junior_promo'][0], 'child') ?>
+                                            <?php echo dro_alan_pizza_price($meta['price_famille'][0], $meta['price_famille_promo'][0], 'group') ?>
                                         </div>
-                                    </div>
-                                </div>
+                                        <div class="col-12">
+                                            <?php echo dro_alan_pizza_price($meta['price_junior'][0], $meta['price_junior_promo'][0], 'child') ?>
+                                        </div>
+                                    </div><!-- ./row -->
+
+                                </div><!-- ./ col-12 -->
                             </a> <!--  / row / . details-element-pizza -->
                             <!-- Modal content  -->
                             <div class="modal fade" style="z-index: 123999942222" id="<?php echo basename(get_permalink()) ?>" tabindex="-1"  aria-labelledby="exampleModalLabel">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h4 class="modal-title" id="exampleModalLabel">
+                                                            <?php the_title() ?>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row list-prices">
+                                                    <div class="col-12">
+                                                        <?php echo dro_alan_pizza_price($meta['price_senior'][0], $meta['price_senior_promo'][0], 'male', $meta['promo'][0]) ?>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <?php echo dro_alan_pizza_price($meta['price_famille'][0], $meta['price_famille_promo'][0], 'group') ?>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <?php echo dro_alan_pizza_price($meta['price_junior'][0], $meta['price_junior_promo'][0], 'child') ?>
+                                                    </div>
+                                                </div><!-- ./row -->
 
-                                            <h4 class="modal-title" id="exampleModalLabel"><?php the_title() ?> </h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
                                         </div>
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-12">
-                <?php the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle')) ?>
+                                                    <?php the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle')) ?>
                                                 </div>
                                                 <div class="col-12">
-                <?php the_excerpt() ?>
+                                                    <?php the_excerpt() ?>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <a  href="tel:+33670794050"><span class="text-success fa fa-phone-square">&nbsp;Appeler pour commander</span></a>
+                                            <a  href="tel:+33670794050"><span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span><span class="call-alanpizza">Appeler pour commander</span></a>
 
                                         </div>
                                     </div>
                                 </div>
                             </div><!-- End Modal content -->                                    
                         </article>
-            <?php }// End while promo have_posts()   ?>
+                    <?php }// End while promo have_posts()   ?>
                 </div><!-- /.row Promo -->
             </div><!-- .container / .element-pizza -->
             <?php
@@ -107,19 +134,23 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
 if (!function_exists('dro_alan_pizza_price')) {
 
     function dro_alan_pizza_price($price, $promo, $icon, $inPromo = '') {
-        $html_output = '<span class="fa fa-' . $icon . '">&nbsp;</span>';
+
+        $html_output = '<div class="row">';
+        $html_output .='<div class="col-3"></div>';
+        $html_output .= '<div class="col-2"><span class="fa fa-' . $icon . '">&nbsp;</span></div>';
 
         if (!empty($price) && isset($price) && !empty($promo) && isset($promo)) {
-            $html_output .= '<span class="price-promo">' . $price . '€</span>';
-            $html_output .= '<span class="price">' . $promo . '€</span>';
+            $html_output .= '<div class="col-2"><del><span>' . $price . '€</span></del></div>';
+            $html_output .= '<div class="col-2"><span class="price">' . $promo . '€</span></div>';
         } else
         if (empty($promo) && !empty($price)) {
-            $html_output .= '<span class="price">' . $price . '€</span>';
+            $html_output .= '<div class="col-2"><span class="price">' . $price . '€</span></div>';
         } else
         if (empty($promo) && empty($price)) {
             return '';
         }
-
+        $html_output .='<div class="col-3"></div>';
+        $html_output .='</div>';
 
         return $html_output;
     }
