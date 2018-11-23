@@ -8,6 +8,8 @@
  *
  * @package dro_caterer
  */
+$dro_alan_pizza_options = get_option('dro_alan_pizza_options');
+extract($dro_alan_pizza_options);
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -66,14 +68,31 @@
                                 <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
                             <?php
                             endif;
-                            $dro_caterer_description = get_bloginfo('description', 'display');
-                            if ($dro_caterer_description || is_customize_preview()) :
-                                ?>
-                                <p class="site-description"><?php echo $dro_caterer_description; /* WPCS: xss ok. */ ?></p>
-                            <?php endif; ?>
+                            ?>
                         </div><!-- .title-box -->
                     </div><!-- .site-branding -->
-
+                    <div class="senior_mega_wrapper">
+                        <div class="senior_mega_inner">
+                            <div class="senior_price">
+                                <h1>SENIOR</h1>
+                                <h4>emporter
+                                <span class="price">6,99€</span></h4>
+                                <h4>livraison
+                                <span class="price">7,99€</span></h4>
+                                </h4>
+                                
+                            </div>
+                        </div>
+                        <div class="senior_mega_inner">
+                            <div class="mega_price">
+                                <h1>MEGA</h1>
+                                <h4>emporter</h4>
+                                <h3>9,99€</h3>
+                                <h4>livraison</h4>
+                                <h5>12,5</h5>
+                            </div>
+                        </div>
+                    </div>
             </header><!-- #masthead -->
 
 

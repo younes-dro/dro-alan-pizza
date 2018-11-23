@@ -16,30 +16,40 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /*
 * Custom style for alan-pizza
 */
+p{
+    word-break: break-all;
+}
 .site-content{
-    padding: 20px 0;
+    /*    padding: 10px 0 10px 0;*/
+    background-color: #303030;
+}
+.content-area-wrapper{
+    padding: 0;
 }
 h2.entry-title{
     text-align: center;
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
+    color: #fff;
 }
 h2.entry-title a{
-    color: #4169e1;
-    font-size: 1.5rem;
+    color: #fff;
     font-family: 'Montserrat-Regular';
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.5rem;
 }
 h2.entry-title a:hover{
     color: #0037de;
 }
 a.see-all{
-    font-size: .8rem;
-    color: rgb(65, 105, 225);
     vertical-align: middle;
     text-decoration: underline;
     display: block;
     padding: 1rem;
     margin: 0 auto;
     transition: all 1s;
+    color: #f6f6f6;
+    font-size: 1rem;
 }
 .scrollup{
     position: fixed;
@@ -60,6 +70,36 @@ a.see-all{
     opacity: 1;
 }
 a.scrollup:visited{ color: #fff;}
+footer p.signature{
+    color: #ccc;
+    font-family: 'Lato', sans-serif;
+}
+footer .site-info{
+    text-align: center;
+    margin: 1.5rem 0 0 0
+}
+footer .site-info p{
+    padding: 0;
+    margin: 0 auto;
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: .9rem;
+    text-align: left;
+}
+footer .site-info p a,
+footer .site-info p a:visited{
+    color: #fff;
+}
+footer .site-info p a:hover{
+    text-decoration: underline;
+}
+.break-line{
+    height: 10px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #303030;
+}
 /*--------------------------------------------------------------
 # Mobile Menu
 --------------------------------------------------------------*/
@@ -72,6 +112,9 @@ a.scrollup:visited{ color: #fff;}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+header{
+    position: relative;
+}
 .site-header{
     /*border: 1px solid #0F0;*/
     position: relative;
@@ -132,12 +175,13 @@ section.phone i.fa{
     background-color: hsla(0, 0%, 0%, 0.6);
 }
 .title-box{
-
+    position: relative;
     margin: 0 auto;
     width: 600px;
     max-width: 75%;
     padding: .9rem;
     border: 2px solid  hsla(0, 0%, 0%, 0.6);
+    display: none;
 }
 p.site-title,
 h1.site-title{
@@ -169,7 +213,62 @@ p.site-description{
     transition: all 1s;
     z-index: 99999;
 }
-
+.senior_mega_wrapper{
+    position: absolute;
+    width: 75%;
+    /* height: 50%; */
+    left: 0;
+    bottom: 0;
+    /* background-color: #F00; */
+    margin: 0 auto;
+    right: 0;
+    max-width: 75%;
+    /* border: 1px solid #FF0; */
+    display: flex;
+}
+.senior_mega_inner{
+    height: 100%;
+    width: 50%;
+    /* background-color: #0F0; */
+}
+.senior_price, 
+.mega_price{
+    /* background-image: url(images/price-250x250.png); */
+    /* background-repeat: no-repeat; */
+    /* background-position: center center; */
+    /* background-size: cover; */
+    /* border: 1px solid blueviolet; */
+    text-align: center;
+    height: 100%;
+    /* width: 50%; */
+    background: #303030;
+    margin: 0 10px 0;
+}
+.senior_mega_wrapper h1,.senior_mega_wrapper h3,.senior_mega_wrapper h4,.senior_mega_wrapper h5{
+    margin: 0;
+    color: #fff;
+    font-family: 'Lato';
+}
+senior_mega_wrapper h1 {
+    font-size: 1.5rem; }
+.senior_mega_wrapper h3{font-size: 1rem ; }
+.senior_mega_wrapper h4{font-size: .9rem ; }
+.senior_mega_wrapper h5{font-size: .8rem ; }
+.senior_mega_wrapper span.price{
+    color: #fff;
+    display: block;
+    border: 1px solid #F0F;
+    background-image: url(images/price.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 125px;
+    height: 60px;
+    margin: 0 auto;
+    padding-top: 15px;
+    font-size: 1.5rem;
+    padding-right: 15px;
+}
 @media screen and (max-width: 576px){
 
 }
@@ -207,6 +306,10 @@ p.site-description{
         height: auto;
         /*left: 0;*/
     }
+    .senior_mega_wrapper h1{font-size: 1.5rem ; }
+    .senior_mega_wrapper h3{font-size: 1.2rem ; }
+    .senior_mega_wrapper h4{font-size: 1rem ; }
+    .senior_mega_wrapper h5{font-size: .9rem ; }    
 }
 @media screen and (min-width: 992px){
     .site-header nav{
@@ -214,18 +317,13 @@ p.site-description{
         padding-right: 150px;
     }
     section.phone{
-        width: 40%;
-        background-color: hsl(117, 36%, 29%);
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        top: 50px;
-        /* color: #eee; */
-        position: absolute;
-        z-index: 999;
+        width: 150px;
+        /*background-color: hsl(117, 36%, 29%);*/
+        left: 150px;
+        right: auto;
     }
     section.phone h1.phone-number{
-        font-size: 2rem;
+        /*font-size: 2rem;*/
     }
     .custom-logo-link{
         top: 0px;
@@ -255,6 +353,7 @@ p.site-description{
     a.see-all{
         display: inline-block;
         font-size: 1rem;
+        color: #f6f6f6;
     }
 }
 @media only screen and (min-width: 320px) and (max-width: 992px) and (orientation: landscape) {
@@ -299,6 +398,7 @@ p.site-description{
     text-decoration: none;
     line-height: 1.3em;
     color: #ff9a00;
+    font-family: 'Lato', sans-serif;
 }
 .main-navigation li:hover > a {
     background-color: hsl(5, 99%, 54%);
@@ -329,12 +429,52 @@ p.site-description{
 /*--------------------------------------------------------------
 # Front Page , single , post type
 --------------------------------------------------------------*/
+.element-pizza-wrapper{
+    position: relative;
+    padding: 2rem 0 0 0;
+    /* margin-bottom: 2rem; */
+    background-color: #000;
+}
+.element-pizza-banner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+}
+.element-pizza-banner-sauce{
+    background-image: url(images/promo-and-type-pizza/rapide-pizza-sauce-tomate-vaureal.jpg);
+}
+.element-pizza-banner-creme{
+    background-image: url(images/promo-and-type-pizza/pizza-3.jpg);
+}
+.element-pizza-banner-promo{
+    background-image: url(images/promo-and-type-pizza/promotion-pizza-vaureal_2.jpg);
+}
+.element-pizza-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-color: #fff;
+
+}
 .element-pizza{
     /* border: 1px solid; */
-    margin: 0 0 20px 0;
+    /*margin: 0 0 20px 0;*/
     /* border-bottom: 1px solid orange; */
-    border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #fe2813 20%, #fe2813 50%, #fe2813 80%, rgba(0, 0, 0, 0) 100%) 0 0 1 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0);
+
+    background-repeat: repeat;
+}
+.element-pizza .page-header h1 span.big-green,
+.element-pizza .page-header h1 span.big-red{
+    color: #e9b316;
+    font-size: 1.75rem;
 }
 .details-element-pizza{
     text-align: center;
@@ -343,22 +483,26 @@ p.site-description{
     max-width: 150px;
 }
 .details-element-pizza .pizza-title{
-    color: #d97e02;
+    color: #fff;
     font-family: 'Montserrat-Regular';
     font-weight: 900;
     font-style: italic;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 .btn-details{
     font-family: 'Lato', sans-serif;
     margin: 4px;
     font-weight: normal;
+    background-color: #fe2813;
+    border-color: #fff;
 }
 .page-header{
     margin: 0 auto;
     border: none;
 }
-.page-header > h1{ font-family: 'Courgette', cursive;  font-size: 2rem; color: #24711f; text-align: center; margin-top: 15px; margin-bottom: 40px}
+.page-header > h1{ 
+    font-family: 'Courgette', cursive;  
+    font-size: 2rem; color: #ec9003; text-align: center; margin-top: 15px; margin-bottom: 40px}
 .page-header > h1 > span.red{ color: #fe2813}
 .price-promo{
     font-size: 14px;
@@ -369,25 +513,26 @@ p.site-description{
 }
 .price{
     font-size: 18px;
-    color: hsl(16, 100%, 50%);
+    color: hsl(14, 100%, 57%);
     /* color: #F00; */
-    font-weight: 600;
-    font-family: sans-serif
+    font-weight: normal;
+    font-family: 'Lato', sans-serif;
 }
 del{
-    color: #717171;
+    color: #edeaea;
 }
 span.fa{
-    color: #4d4d4d;
+    color: #edeaea;
 }
 
 // Modal 
-.modal-dialog{
+.modal-container{
 
 }
-.modal-title{
-    color: #d97e02;
-    font-family: 'Lato', sans-serif;
+
+.element-pizza .modal-title{
+    color: #fff;
+    font-family: 'Montserrat-Regular';
     font-weight: 900;
     font-style: italic;
     font-size: 1.2rem;
@@ -395,12 +540,15 @@ span.fa{
     /* border: 1px solid; */
     text-align: center;
 }
+.element-pizza button.close span{
+    color: #fff;
+}
 .element-pizza .modal-body{
     text-align: center;
 }
 .element-pizza .modal-body p{
     margin-top: 1rem;
-    color: #717171;
+    color: #fff;
 }
 .element-pizza .modal-body img{
     max-width: 150px;
@@ -423,20 +571,64 @@ span.fa{
     display: block;
     float: left;
     font-family: 'Lato', sans-serif;
-    
+
+}
+.horaire h1,
+.horaire h3,
+.zone-livraison h1{
+    font-family: 'Lato';
+}
+.zone-livraison{
+    text-align: center
+}
+.zone-livraison h1{
+    color: #e21f26;
+}
+.zone-livraison p span{
+    display: inline-block;
+    padding: 5px;
+    margin: .5rem;
+    background-color: #303030;
+    color: #fff;
+    border-radius: 4px;
+    border: 1px solid #fff;
 }
 @media screen and (min-width:768px){
     .page-header h1{
         font-weight: 2rem;
     }
+    .element-pizza .page-header h1 span.big-red,
+    .element-pizza .page-header h1 span.big-green{
+        font-size: 2rem;
+    }    
     .call-alanpizza{
         padding: 15px 30px;
+    }
+}
+@media screen and (min-width: 992px){
+    .element-pizza .page-header h1 span.big-red,
+    .element-pizza .page-header h1 span.big-green{
+        font-size: 2.5rem;
     }
 }
 
 /*--------------------------------------------------------------
 # Archive page
 --------------------------------------------------------------*/
+.archive .header-image{
+    height: 40vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #303030;
+
+}
+.type-pizza p,
+.type-menu p{
+    color: #fff;
+}
+
 .archive .page-header > h1{
     position: relative;
 }
@@ -458,12 +650,13 @@ span.fa{
     background-image: url(images/price.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 10px center;
+    background-position: center center;
     width: 150px;
     height: 80px;
     margin: 0 auto;
-    padding-top: 10px;
-    font-size: 3rem;
+    padding-top: 15px;
+    font-size: 2rem;
+    padding-right: 15px
 }
 /*--------------------------------------------------------------
 # Side bar front page 
