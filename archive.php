@@ -6,7 +6,7 @@
  *
  * @package dro_caterer
  */
-get_header();
+get_header('archive');
 ?>
 <div class="container-fluid">
     <div class="row">
@@ -26,20 +26,47 @@ get_header();
 
                         <div class="row justify-content-md-center">
                             <?php
-                            /* Start the Loop */
-                            while (have_posts()) :
-                                the_post();
+                            if ($wp_query->queried_object->taxonomy == 'type_pizza'):
+                                $type_pizza_query = new WP_Query(array(
+                                    'post_type' => 'pizza',
+                                    
+                                    'tax_query' => array(
+                                        array('taxonomy' => 'type_pizza',
+                                            'field' => 'term_id',
+                                            'terms' => $wp_query->queried_object->term_id //6 //198
+                                        )
+                                    ),
+                                    'orderby' => 'title',
+                                    'order' => 'ASC'
+                                ));
+                                $args = array(
+                                    'query' => $type_pizza_query,
+                                    'title' => '',
+                                    'class' => 'big-green',
+                                    'promo' => '',
+                                    'come_from' => '',
+                                    'term_id' => $wp_query->queried_object->term_id , //5 // 198
+                                    'bg_class' => ''
+                                );
+                                dro_alan_pizza_element_pizza($args);
+                            else:
 
-                                /*
-                                 * Include the Post-Type-specific template for the content.
-                                 * If you want to override this in a child theme, then include a file
-                                 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-                                 */
-                                get_template_part('template-parts/post/content', 'custom-tax');
 
-                            endwhile;
+                                /* Start the Loop */
+                                while (have_posts()) :
+                                    the_post();
 
-                            the_posts_navigation();
+                                    /*
+                                     * Include the Post-Type-specific template for the content.
+                                     * If you want to override this in a child theme, then include a file
+                                     * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+                                     */
+                                    get_template_part('template-parts/post/content', 'custom-tax');
+
+                                endwhile;
+
+                                the_posts_navigation();
+                            endif;
 
                         else :
 

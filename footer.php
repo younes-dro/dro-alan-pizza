@@ -21,7 +21,7 @@
                         <img style="max-width: 150px" src="<?php echo CHILD_THEME_URI ?>/images//alan-pizza-logo-retina.png">
                     </div>
                     <div class="col-12">
-                        <p style="color: #ccc">Alan Pizza investit dans les meilleures produits et achète ses produits de base de chez les meilleurs fournisseurs, afin de vous garantir la qualité, et la fraicheur des Pizzas</p>
+                        <p class="signature">Alan Pizza investit dans les meilleures produits et achète ses produits de base de chez les meilleurs fournisseurs, afin de vous garantir la qualité, et la fraicheur des Pizzas</p>
                     </div>
                 </div>
             </div><!-- ./col-12 col-md-4 -->
@@ -33,10 +33,14 @@
         <div class="row">
             <div class="col-12">
                 <div class="site-info">
+                    <p>
                     <?php
                     /* translators: 1: Theme name, 2: Theme author. */
-                    printf(esc_html__('Theme: %1$s by %2$s.', 'dro-caterer'), 'Alan Pizza ', '<a href="http://www.dro.123.fr">caterer theme</a>');
+                    printf(esc_html__('%1$s by %2$s.', 'dro-caterer'),
+                            'Alan Pizza ',
+                            '<a  title = "" href="https://github.com/younes-dro/dro-caterer">caterer theme</a>');
                     ?>
+                    </p>
                 </div><!-- .site-info -->
             </div><!-- ./col-12-->
         </div><!-- ./row -->

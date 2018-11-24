@@ -21,7 +21,6 @@
 
     <body <?php body_class(); ?>>
 <div id="page" class="site">
-            <div class="container-fluid">
                 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'dro-alan-pizza'); ?></a>
                 <header id="masthead" class="site-header">
                     <nav id="site-navigation" class="main-navigation sticky-active" role="navigation">
@@ -44,10 +43,12 @@
                              srcset="http://127.0.0.2:8000/wp-content/uploads/2018/11/alan-pizza-logo-retina.png 400w, http://127.0.0.2:8000/wp-content/uploads/2018/11/alan-pizza-logo-retina-300x150.png 300w" sizes="(max-width: 400px) 100vw, 400px">
                     </a>
                     
-                        <?php $header_image_promo = CUSTOM_IMAGES_PATH . '/promo-and-type-pizza/promotion-pizza-vaureal.jpg';?>
+                        <?php $header_image_promo = CUSTOM_IMAGES_PATH . '/promo-and-type-pizza/promotion-pizza-vaureal_2.jpg';?>
                         <div class="site-branding header-background-image" 
-                             style="background-image: url('<?php echo $header_image_promo  ?>') ; height: 35vh">
+                             style="background-image: url('<?php echo $header_image_promo  ?>')">
+                            <?php get_senior_mega_price_options()?>
                         </div> <!-- .site-branding --> 
+                        
 
                 </header><!-- #masthead -->
 

@@ -20,6 +20,7 @@
     </head>
 
     <body <?php body_class(); ?>>
+        <?php the_custom_logo() ?>
         <div id="page" class="site">
             <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'dro-alan-pizza'); ?></a>
             <header id="masthead" class="site-header">
@@ -31,6 +32,7 @@
                     ));
                     ?>
                 </nav><!-- #site-navigation -->
+                
                 <section class="phone">
                     <h1 class="phone-number">
                         <i class="fa fa-phone-square"></i>
@@ -39,8 +41,19 @@
                     </h1>
                 </section>
 
-                <?php the_custom_logo() ?>
-                <?php if (get_header_image() && !display_header_text()) : ?>
+                
+                <?php
+                $taxonomy_id = $wp_query->queried_object->term_id;
+                $taxonomy_image_id = get_term_meta($taxonomy_id, 'showcase-taxonomy-image-id', true);
+                $taxonomy_image_url = wp_get_attachment_image_url($taxonomy_image_id, 'header-taxonomy-image');
+//                var_dump($taxonomy_image_url);
+                ?>
+                <?php if ($taxonomy_image_url !== FALSE): ?>
+                    <div id = "header-image" class = "site-branding header-background-image" style="background-image: url(<?php echo $taxonomy_image_url; ?>)"> 
+                        <?php get_senior_mega_price_options();?>
+                    </div>
+                <?php endif; ?>
+                <?php if (get_header_image() && ($taxonomy_image_url == false)) : ?>
                     <div id="header-image" class="header-image">
                         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                             <img src="<?php header_image(); ?>"
@@ -50,29 +63,6 @@
                         </a>
                     </div>
                 <?php endif; ?>
-                <?php if (get_header_image() && display_header_text()): ?>
-                    <div class="site-branding header-background-image c" style="background-image: url(<?php header_image() ?>)">
-                        
-                    <?php else: ?>
-                        <div class="site-branding">
-                        <?php endif; ?>
-                        <div class="title-box">
-                            <?php
-                            if (is_front_page() && is_home()) :
-                                ?>
-                                <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                                <?php
-                            else :
-                                ?>
-                                <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-                            <?php
-                            endif;
-                            ?>
-                        </div><!-- .title-box -->
-                        <!--<div class="header-background-image-overlay"></div>-->
-                            <?php get_senior_mega_price_options();?>
-                        
-                    </div><!-- .site-branding -->
 
             </header><!-- #masthead -->
 
