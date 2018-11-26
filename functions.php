@@ -4,21 +4,35 @@ define('CHILD_THEME_URI', get_stylesheet_directory_uri());
 define('CUSTOM_IMAGES_PATH', CHILD_THEME_URI . '/images');
 
 
-if(!function_exists('dro_alan_pizza_trader_setup')){
+if (!function_exists('dro_alan_pizza_trader_setup')) {
+
     /**
      * add suplement  WordPress features for Alan Pizza theme
      * 
      */
-    function dro_alan_pizza_trader_setup(){
-        
-        
+    function dro_alan_pizza_trader_setup() {
+
+
         /*
          * Add image size for custom taxonmy 
          * 
          */
         add_image_size('header-taxonomy-image', 1124, 250, TRUE);
-        
+
+        /**
+         * MultiPostThumbnails
+         */
+        if (class_exists('MultiPostThumbnails')) {
+            new MultiPostThumbnails(
+                    array(
+                'label' => __('Secondary Image', 'dro-alan-pizza'),
+                'id' => 'secondary-image',
+                'post_type' => 'page'
+                    )
+            );
+        }
     }
+
 }
 add_action('after_setup_theme', 'dro_alan_pizza_trader_setup');
 

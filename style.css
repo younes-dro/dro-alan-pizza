@@ -17,7 +17,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Custom style for alan-pizza
 */
 p{
-    word-break: break-all;
+    /*word-break: break-all;*/
 }
 .site-content{
     /*    padding: 10px 0 10px 0;*/
@@ -740,3 +740,73 @@ span.fa{
     height: auto;
     margin: 0 auto;
 }
+/*--------------------------------------------------------------
+# Section Fromagio in front page 
+--------------------------------------------------------------*/
+.bg_fromagio{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center right;    
+}
+.bg_fromagio img{
+    max-width: 80%;
+}
+.fromagio-content{
+    text-align: center;
+}
+.fromagio-content h1{
+    /*font-family: 'Lato', sans-serif;*/
+    color: #e21f26;
+}
+.fromagio-content p{
+    color: #fff;
+}
+.fromagio_price{
+    color: #fff;
+    display: block;
+    /* border: 1px solid #F0F; */
+    background-image: url(images/price.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100px;
+    height: 60px;
+    margin: 0 auto;
+    padding-top: 15px;
+    font-size: 1rem;
+    padding-right: 15px;
+}
+.fromagio-content a{
+    background-color: #fe2813;
+    color: #fff;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+@media screen and (min-width:992px){
+    .fromagio_price{
+        width: 160px;
+        height: 120px;
+        padding-top: 30px;
+        font-size: 2rem;
+    }
+}
+/*.fromagio_title{
+    position: relative;
+}
+
+.fromagio_title > img:nth-child(1){
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 300px;
+    height: auto; 
+}
+.fromagio_title > img:nth-child(2){
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 500px;
+       
+}*/

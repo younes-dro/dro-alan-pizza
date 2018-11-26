@@ -11,7 +11,7 @@ function get_senior_mega_price_options() {
                         <h1>SENIOR</h1>
                         <div class="row">
                             <div class="col-12">
-                                <h4>emporter<span class="price">
+                                <h4>à emporter<span class="price">
                                         <?php echo $dro_alan_pizza_options['prix_senior_emporter']; ?>€</span></h4>
                             </div>
                         </div>  
@@ -30,7 +30,7 @@ function get_senior_mega_price_options() {
                         <h1>MEGA</h1>
                         <div class="row">
                             <div class="col-12">
-                                <h4>emporter<span class="price">
+                                <h4>à emporter<span class="price">
                                         <?php echo $dro_alan_pizza_options['prix_mega_emporter']; ?>€</span></h4>
                             </div>
                         </div>  
@@ -46,7 +46,58 @@ function get_senior_mega_price_options() {
         </div>
     </div>
     <?php
-    
+}
+
+if (!function_exists('dro_alan_pizza_fromagio')) {
+
+    function dro_alan_pizza_fromagio($args) {
+        extract($args);
+        if ($query->have_posts()):
+            ?>
+            <div class="break-line"></div>
+            <div class="element-pizza-wrapper">
+                <div class="element-pizza-banner <?php echo $bg_class ?>"></div>
+                <div class="element-pizza-overlay"></div>
+                <div class="container-fluid element-pizza">
+
+
+                    <?php
+                    while ($query->have_posts()) {
+                        $fromagio_price = get_option('dro_alan_pizza_options');
+                        $query->the_post();
+                        ?>
+                        <div class="row">
+                            <?php
+                            if (class_exists('MultiPostThumbnails')) :
+                                $bg = MultiPostThumbnails::get_post_thumbnail_url(
+                                                'page', 'secondary-image'
+                                );
+                            endif;
+                            ?>
+                            <div class="col-12 col-lg-6 bg_fromagio" style="background-image: url('<?php echo $bg ?>')">
+                                <?php
+                                the_post_thumbnail();
+                                ?>
+                            </div>
+                            <div class="col-12 col-lg-6 fromagio-content">
+                                <span class="fromagio_price"><?php echo $fromagio_price['prix_fromagio']?>€</span>
+                                <?php the_content() ?>
+<!--                                 <a  href="tel:+33670794050"><span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span><span class="call-alanpizza">Appeler pour commander</span>
+                                     <hr style="visibility: hidden; clear: both">
+                                 </a>-->
+                            </div>
+                        </div><!-- /.row -->
+                        <?php
+                    }
+                    ?>
+
+                </div><!-- .container / .element-pizza -->
+            </div><!-- element-pizza wrapper -->
+            <?php
+        endif;
+        wp_reset_postdata();
+    }
+
 }
 
 if (!function_exists('dro_alan_pizza_element_pizza')) {
@@ -78,8 +129,8 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                         <span class="<?php echo $class ?>"><?php echo $title ?></span>
                                         <?php
                                         if ($promo == 'promo'):
-                                            $promo_uri = ($_SERVER['SERVER_NAME']=='127.0.0.2') ? "/index.php//pizza-en-promo-a-vaureal/" : "/pizza-en-promo-a-vaureal/";
-                                            echo '<a title="'.$_SERVER['SERVER_NAME'].'" href="'.$promo_uri.'" class="see-all">Voir tout <i class="ion-ios-arrow-forward"></i></a>';
+                                            $promo_uri = ($_SERVER['SERVER_NAME'] == '127.0.0.2') ? "/index.php//pizza-en-promo-a-vaureal/" : "/pizza-en-promo-a-vaureal/";
+                                            echo '<a title="' . $_SERVER['SERVER_NAME'] . '" href="' . $promo_uri . '" class="see-all">Voir tout <i class="ion-ios-arrow-forward"></i></a>';
                                         else:
                                             echo '<a href="' . get_term_link($term_id) . '" class="see-all">Voir tout <i class="ion-ios-arrow-forward"></i></a>';
                                         endif;
@@ -178,7 +229,7 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                     </div>
                                 </div><!-- End Modal content -->                                    
                             </article>
-                        <?php }// End while promo have_posts()     ?>
+                        <?php }// End while promo have_posts()         ?>
                     </div><!-- /.row Promo -->
                 </div><!-- .container / .element-pizza -->
             </div><!-- element-pizza wrapper -->
@@ -223,6 +274,7 @@ function get_the_type_menu_price($term_id) {
 
     return '<span class="price-type-menu">' . $taxonmomy_price['type_menu_price'] . '</span>';
 }
+
 /**
  * Not used for now
  * @param type $price

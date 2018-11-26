@@ -16,22 +16,12 @@ get_header();
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
                     <?php
-                    $promo = new WP_Query(array(
-                        'posts_per_page' => 6,
-                        'post_type' => 'pizza',
-                        'meta_key' => 'promo',
-                        'meta_value' => 'yes'
-                    ));
+                    $fromagio = new WP_Query(array('pagename'=>'la-fromagio'));
                     $args = array(
-                        'query' => $promo,
-                        'title' => 'Nos Pizzas en Promo',
-                        'class' => 'big-red',
-                        'promo' => 'promo',
-                        'come_from' => '',
-                        'term_id' => '',
-                        'bg_class' => 'element-pizza-banner-promo'
+                        'query' => $fromagio,
+                        'bg_class' => ''
                     );
-                    dro_alan_pizza_element_pizza($args);
+                    dro_alan_pizza_fromagio($args);
                     ?>
                     <?php
                     $creme_fraiche = new WP_Query(array(
@@ -40,7 +30,7 @@ get_header();
                         'tax_query' => array(
                             array('taxonomy' => 'type_pizza',
                                 'field' => 'term_id',
-                                'terms' => 198 //6 //198
+                                'terms' => 6 // 198 //6 //198
                             )
                         ),
                         'orderby' => 'title',
@@ -52,7 +42,7 @@ get_header();
                         'class' => 'big-green',
                         'promo' => '',
                         'come_from' => '',
-                        'term_id' =>  198,// 6,  // 198
+                        'term_id' =>  6 , //198,// 6,  // 198
                         'bg_class' => 'element-pizza-banner-creme'
                     );
                     dro_alan_pizza_element_pizza($args);
@@ -65,7 +55,7 @@ get_header();
                             array(
                                 'taxonomy' => 'type_pizza',
                                 'field' => 'term_id',
-                                'terms' => 197 //5 // 5 197
+                                'terms' => 5 //197 //5 // 5 197
                             )
                         ),
                         'orderby' => 'title',
@@ -77,7 +67,7 @@ get_header();
                         'class' => 'big-green',
                         'promo' => '',
                         'come_from' => '',
-                        'term_id' => 197, // 5, // 6
+                        'term_id' => 5, // 197, // 5, // 6
                         'bg_class' => 'element-pizza-banner-sauce'
                     );                    
                     dro_alan_pizza_element_pizza($args);
