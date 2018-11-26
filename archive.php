@@ -13,7 +13,9 @@ get_header('archive');
         <div class="col-12">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
-
+                    <div class="break-line"></div>
+                    <div class="bg-archive-content" style="background-image: url(<?php echo $taxonomy_image_url; ?>)"></div>
+                    <div class="element-pizza-overlay"></div>
                     <?php if (have_posts()) : ?>
 
                         <header class="page-header">
@@ -29,7 +31,6 @@ get_header('archive');
                             if ($wp_query->queried_object->taxonomy == 'type_pizza'):
                                 $type_pizza_query = new WP_Query(array(
                                     'post_type' => 'pizza',
-                                    
                                     'tax_query' => array(
                                         array('taxonomy' => 'type_pizza',
                                             'field' => 'term_id',
@@ -45,7 +46,7 @@ get_header('archive');
                                     'class' => 'big-green',
                                     'promo' => '',
                                     'come_from' => '',
-                                    'term_id' => $wp_query->queried_object->term_id , //5 // 198
+                                    'term_id' => $wp_query->queried_object->term_id, //5 // 198
                                     'bg_class' => ''
                                 );
                                 dro_alan_pizza_element_pizza($args);

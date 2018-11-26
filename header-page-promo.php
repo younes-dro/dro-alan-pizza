@@ -36,11 +36,11 @@
                         <h1 class="phone-number">01 34 25 03 32</h1>
                     </section>
                     
-                    <a href="http://127.0.0.2:8000" title="Traiteur à Domicile" class="custom-logo-link" rel="home" itemprop="url">
-                        <img width="400" height="200" src="http://127.0.0.2:8000/wp-content/uploads/2018/11/alan-pizza-logo-retina.png" 
+                    <a href="http://www.alan-pizza-vaureal.dro.123.fr" title="Traiteur à Domicile" class="custom-logo-link" rel="home" itemprop="url">
+                        <img width="400" height="200" src="http://www.alan-pizza-vaureal.dro.123.fr/wp-content/uploads/2018/11/alan-pizza-logo-retina.png" 
                              class="custom-logo " 
                              alt="Alan Pizza" itemprop="logo" 
-                             srcset="http://127.0.0.2:8000/wp-content/uploads/2018/11/alan-pizza-logo-retina.png 400w, http://127.0.0.2:8000/wp-content/uploads/2018/11/alan-pizza-logo-retina-300x150.png 300w" sizes="(max-width: 400px) 100vw, 400px">
+                             srcset="http://www.alan-pizza-vaureal.dro.123.fr/wp-content/uploads/2018/11/alan-pizza-logo-retina.png 400w, http://www.alan-pizza-vaureal.dro.123.fr/wp-content/uploads/2018/11/alan-pizza-logo-retina-300x150.png 300w" sizes="(max-width: 400px) 100vw, 400px">
                     </a>
                     
                         <?php $header_image_promo = CUSTOM_IMAGES_PATH . '/promo-and-type-pizza/promotion-pizza-vaureal_2.jpg';?>

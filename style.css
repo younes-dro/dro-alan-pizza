@@ -22,9 +22,14 @@ p{
 .site-content{
     /*    padding: 10px 0 10px 0;*/
     background-color: #303030;
+    position: relative;
 }
 .content-area-wrapper{
     padding: 0;
+}
+h1.entry-title{
+    color: #fff;
+    font-family: 'Lato', sans-serif;
 }
 h2.entry-title{
     text-align: center;
@@ -99,6 +104,11 @@ footer .site-info p a:hover{
     margin: 0 auto;
     padding: 0;
     background-color: #303030;
+}
+div.nav-next a,
+div.nav-previous a{
+    color: #fff;
+    font-family: 'Lato', sans-serif
 }
 /*--------------------------------------------------------------
 # Mobile Menu
@@ -334,7 +344,7 @@ p.site-description{
 @media screen and (min-width: 992px){
     .site-header nav{
         z-index: 99;
-        padding-right: 150px;
+        padding-right: 50px;
     }
     section.phone{
         width: 150px;
@@ -481,7 +491,7 @@ p.site-description{
     width: 100%;
     height: 100%;
     opacity: 0.1;
-    background-color: #fff;
+    background-color: #000;
 
 }
 .element-pizza{
@@ -498,6 +508,13 @@ p.site-description{
 }
 .details-element-pizza{
     text-align: center;
+    height: 300px;
+    max-height: 300px;
+    padding: 5px;
+}
+.details-element-pizza > .col-12{
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
 }
 .details-element-pizza .pizza-image img,
 .element-pizza .modal-body img{
@@ -652,8 +669,30 @@ span.fa{
     background-position: center center;
     background-color: #303030;
     text-align: center;
-
 }
+.archive .header-background-image{
+    background-attachment: fixed;
+}
+
+.archive .site-content{
+    background-color: #000;
+}
+.archive .site-main{
+    position: relative;
+}
+.bg-archive-content{
+    background-color: #ccc;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    opacity: .1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
 .type-pizza p,
 .type-menu p{
     color: #fff;

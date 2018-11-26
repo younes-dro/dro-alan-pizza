@@ -12,7 +12,7 @@ get_header();
 ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12 content-area-wrapper">
+        <div class="col-12 content-area-wrapper">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
                     <?php
@@ -52,7 +52,7 @@ get_header();
                         'class' => 'big-green',
                         'promo' => '',
                         'come_from' => '',
-                        'term_id' =>  198 ,//5 // 198
+                        'term_id' =>  198,// 6,  // 198
                         'bg_class' => 'element-pizza-banner-creme'
                     );
                     dro_alan_pizza_element_pizza($args);
@@ -65,7 +65,7 @@ get_header();
                             array(
                                 'taxonomy' => 'type_pizza',
                                 'field' => 'term_id',
-                                'terms' => 197 // 6
+                                'terms' => 197 //5 // 5 197
                             )
                         ),
                         'orderby' => 'title',
@@ -77,7 +77,7 @@ get_header();
                         'class' => 'big-green',
                         'promo' => '',
                         'come_from' => '',
-                        'term_id' => 197, // 6
+                        'term_id' => 197, // 5, // 6
                         'bg_class' => 'element-pizza-banner-sauce'
                     );                    
                     dro_alan_pizza_element_pizza($args);

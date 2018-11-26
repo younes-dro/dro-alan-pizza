@@ -8,6 +8,7 @@
  *
  * @package dro_caterer
  */
+global $taxonomy_image_url;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -67,4 +68,5 @@
             </header><!-- #masthead -->
 
 
-            <div id="content" class="site-content">
+            <div id="content" class="site-content" >
+                
