@@ -46,6 +46,8 @@ if (!function_exists('dro_alan_pizza_scripts')) {
         /*
          * css
          */
+        wp_dequeue_style('dro-caterer-one-page-css');
+        wp_deregister_style('dro-caterer-one-page-css');
         wp_enqueue_style('font-awesome', CHILD_THEME_URI . '/assets/font-awesome/css/font-awesome.min.css');
         wp_enqueue_style('gogle-fonts-courgette', 'https://fonts.googleapis.com/css?family=Courgette');
         wp_enqueue_style('dro-alan-pizza-lato', 'https://fonts.googleapis.com/css?family=Lato');
@@ -58,6 +60,8 @@ if (!function_exists('dro_alan_pizza_scripts')) {
          */
         wp_dequeue_script('dro-caterer-js');
         wp_deregister_script('dro-caterer-js');
+        wp_dequeue_script('dro-caterer-one-page-js');
+        wp_deregister_script('dro-caterer-one-page-js');
         wp_enqueue_script('dro-alan-pizza-js', CHILD_THEME_URI . '/js/dro-alan-pizza.js', array('jquery'), '20181911', TRUE);
 
         if (is_front_page()) {

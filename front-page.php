@@ -26,11 +26,11 @@ get_header();
                     <?php
                     $creme_fraiche = new WP_Query(array(
                         'post_type' => 'pizza',
-                        'posts_per_page' => 3,
+                        'posts_per_page' => 4,
                         'tax_query' => array(
                             array('taxonomy' => 'type_pizza',
                                 'field' => 'term_id',
-                                'terms' => 6 // 198 //6 //198
+                                'terms' => 198// 198 //6 //198
                             )
                         ),
                         'orderby' => 'title',
@@ -42,7 +42,7 @@ get_header();
                         'class' => 'big-green',
                         'promo' => '',
                         'come_from' => '',
-                        'term_id' =>  6 , //198,// 6,  // 198
+                        'term_id' =>  198 ,// 6,  // 198
                         'bg_class' => 'element-pizza-banner-creme'
                     );
                     dro_alan_pizza_element_pizza($args);
@@ -50,12 +50,12 @@ get_header();
                     <?php
                     $sauce_tomate = new WP_Query(array(
                         'post_type' => 'pizza',
-                        'posts_per_page' => 3,
+                        'posts_per_page' => 4,
                         'tax_query' => array(
                             array(
                                 'taxonomy' => 'type_pizza',
                                 'field' => 'term_id',
-                                'terms' => 5 //197 //5 // 5 197
+                                'terms' => 197 //5 // 5 197
                             )
                         ),
                         'orderby' => 'title',
@@ -67,7 +67,7 @@ get_header();
                         'class' => 'big-green',
                         'promo' => '',
                         'come_from' => '',
-                        'term_id' => 5, // 197, // 5, // 6
+                        'term_id' =>  197, // 5, // 6
                         'bg_class' => 'element-pizza-banner-sauce'
                     );                    
                     dro_alan_pizza_element_pizza($args);

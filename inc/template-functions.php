@@ -52,10 +52,11 @@ if (!function_exists('dro_alan_pizza_fromagio')) {
 
     function dro_alan_pizza_fromagio($args) {
         extract($args);
+//        var_dump($query->have_posts());
         if ($query->have_posts()):
             ?>
             <div class="break-line"></div>
-            <div class="element-pizza-wrapper">
+            <div class="element-pizza-wrapper  la-fromagio-wrapper">
                 <div class="element-pizza-banner <?php echo $bg_class ?>"></div>
                 <div class="element-pizza-overlay"></div>
                 <div class="container-fluid element-pizza">
@@ -80,9 +81,9 @@ if (!function_exists('dro_alan_pizza_fromagio')) {
                                 ?>
                             </div>
                             <div class="col-12 col-lg-6 fromagio-content">
-                                <span class="fromagio_price"><?php echo $fromagio_price['prix_fromagio']?>€</span>
+                                <span class="fromagio_price"><?php echo $fromagio_price['prix_fromagio'] ?>€</span>
                                 <?php the_content() ?>
-<!--                                 <a  href="tel:+33670794050"><span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span><span class="call-alanpizza">Appeler pour commander</span>
+                <!--                                 <a  href="tel:+33670794050"><span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span><span class="call-alanpizza">Appeler pour commander</span>
                                      <hr style="visibility: hidden; clear: both">
                                  </a>-->
                             </div>
@@ -117,70 +118,40 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                     <div class="row">
                         <div class="col-12">
                             <div class="page-header">
-                                <?php
-                                // page-promotions.php
-                                if ($come_from == 'page-promo') {
-                                    ?>
-                                    <h1>Nos Pizzas en promotions</h1>
+                                <h1>
+                                    <span class="<?php echo $class ?>"><?php echo $title ?></span>
                                     <?php
-                                } else {
+                                    if (is_front_page()) {
+                                        echo '<a href="' . get_term_link($term_id) . '" class="see-all">Voir tout <i class="ion-ios-arrow-forward"></i></a>';
+                                    }
                                     ?>
-                                    <h1>
-                                        <span class="<?php echo $class ?>"><?php echo $title ?></span>
-                                        <?php
-                                        if ($promo == 'promo'):
-                                            $promo_uri = ($_SERVER['SERVER_NAME'] == '127.0.0.2') ? "/index.php//pizza-en-promo-a-vaureal/" : "/pizza-en-promo-a-vaureal/";
-                                            echo '<a title="' . $_SERVER['SERVER_NAME'] . '" href="' . $promo_uri . '" class="see-all">Voir tout <i class="ion-ios-arrow-forward"></i></a>';
-                                        else:
-                                            echo '<a href="' . get_term_link($term_id) . '" class="see-all">Voir tout <i class="ion-ios-arrow-forward"></i></a>';
-                                        endif;
-                                        ?>
-                                    </h1>
-                                    <?php
-                                }
-                                ?>
+                                </h1>
                             </div>
                         </div>
                     </div><!-- .row -->
                     <div class="row">
                         <?php while ($query->have_posts()) { ?>
-                            <article id="post-<?php the_ID(); ?>"  <?php post_class(array('col-xs-12 col-sm-6 col-md-4 ')); ?>>
+                            <article id="post-<?php the_ID(); ?>"  <?php post_class(array('col-xs-12 col-sm-6 col-md-3 ')); ?>>
                                 <?php
                                 $query->the_post();
                                 $meta = get_post_meta(get_the_ID(), '');
                                 ?>
 
                                 <a class="row details-element-pizza" href="#<?php echo basename(get_permalink()) ?>" data-toggle="modal" >
-
                                     <div class="col-12">
-
                                         <div class="row">
                                             <div class="col-12">
                                                 <span class="pizza-title"><?php the_title() ?></span>
                                             </div>
-                                            <div class="col-12">
-                                                <button class=" btn-details btn btn-dark btn-light btn-sm"><i class="fa fa-plus">&nbsp;</i>Détails </button>
-                                            </div>
                                         </div><!-- /.row -->
-
                                         <div class="row">
                                             <div class="col-12 pizza-image">
                                                 <?php the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle')) ?>
                                             </div><!-- .col-12 /. image-pizza-->
+                                            <div class="col-12">
+                                                <button class=" btn-details btn btn-dark btn-light btn-sm"><i class="fa fa-plus">&nbsp;</i>Détails </button>
+                                            </div><!-- ./ details -->                                            
                                         </div><!-- ./row-->
-
-                                        <div class="row list-prices">
-                                            <div class="col-12">
-                                                <?php echo dro_alan_pizza_price($meta['price_senior'][0], $meta['price_senior_promo'][0], 'male', $meta['promo'][0]) ?>
-                                            </div>
-                                            <div class="col-12">
-                                                <?php echo dro_alan_pizza_price($meta['price_famille'][0], $meta['price_famille_promo'][0], 'group') ?>
-                                            </div>
-                                            <div class="col-12">
-                                                <?php echo dro_alan_pizza_price($meta['price_junior'][0], $meta['price_junior_promo'][0], 'child') ?>
-                                            </div>
-                                        </div><!-- ./row -->
-
                                     </div><!-- ./ col-12 -->
                                 </a> <!--  / row / . details-element-pizza -->
                                 <!-- Modal content  -->
@@ -197,18 +168,6 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                                             </h4>
                                                         </div>
                                                     </div>
-                                                    <div class="row list-prices">
-                                                        <div class="col-12">
-                                                            <?php echo dro_alan_pizza_price($meta['price_senior'][0], $meta['price_senior_promo'][0], 'male', $meta['promo'][0]) ?>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <?php echo dro_alan_pizza_price($meta['price_famille'][0], $meta['price_famille_promo'][0], 'group') ?>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <?php echo dro_alan_pizza_price($meta['price_junior'][0], $meta['price_junior_promo'][0], 'child') ?>
-                                                        </div>
-                                                    </div><!-- ./row -->
-
                                                 </div>
                                             </div>
                                             <div class="modal-body">
@@ -222,8 +181,16 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <a  href="tel:+33670794050"><span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span><span class="call-alanpizza">Appeler pour commander</span></a>
-
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <a  href="tel:+33670794050"><span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span><span class="call-alanpizza">+33670794050</span></a>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <a  href="tel:+33670794050"><span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span><span class="call-alanpizza">+33670794050</span></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -240,6 +207,9 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
     }
 
 }
+/**
+ * To remove 
+ */
 if (!function_exists('dro_alan_pizza_price')) {
 
     function dro_alan_pizza_price($price, $promo, $icon, $inPromo = '') {
