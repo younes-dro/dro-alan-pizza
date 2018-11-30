@@ -1,5 +1,9 @@
 ﻿<?php
-
+function get_infos_options($field){
+    $dro_alan_pizza_infos_options = get_option('dro_alan_pizza_infos_options');
+    
+    return $dro_alan_pizza_infos_options[$field];
+}
 function get_senior_mega_price_options() {
     $dro_alan_pizza_options = get_option('dro_alan_pizza_options');
     ?>
@@ -184,10 +188,16 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="col-12">
-                                                            <a  href="tel:+33670794050"><span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span><span class="call-alanpizza">+33670794050</span></a>
+                                                            <a  href="tel:<?php echo get_infos_options('tele_1')?>">
+                                                                <span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span>
+                                                                <span class="call-alanpizza"><?php echo get_infos_options('tele_1')?></span>
+                                                            </a>
                                                         </div>
                                                         <div class="col-12">
-                                                            <a  href="tel:+33670794050"><span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span><span class="call-alanpizza">+33670794050</span></a>
+                                                            <a  href="tel:<?php echo get_infos_options('tele_2')?>">
+                                                                <span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span>
+                                                                <span class="call-alanpizza"><?php echo get_infos_options('tele_2')?></span>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
