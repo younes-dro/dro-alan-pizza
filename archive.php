@@ -49,7 +49,11 @@ get_header('archive');
                                     'term_id' => $wp_query->queried_object->term_id, //5 // 198
                                     'bg_class' => ''
                                 );
-                                dro_alan_pizza_element_pizza($args);
+                                ?>
+                             <div class="col-12">
+                                <?php dro_alan_pizza_element_pizza($args); ?>
+                             </div>
+                            <?php
                             else:
 
 

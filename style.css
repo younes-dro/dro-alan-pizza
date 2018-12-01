@@ -735,6 +735,15 @@ span.fa{
     font-size: 2rem;
     padding-right: 15px
 }
+
+.archive .element-pizza-wrapper{
+    background-color: transparent;
+}
+.archive .entry-footer img{
+    max-width: 80px;
+    display: block;
+    margin: 0 auto;
+}
 /*--------------------------------------------------------------
 # Side bar front page 
 --------------------------------------------------------------*/

@@ -252,7 +252,7 @@ function get_the_type_menu_price($term_id) {
     if (is_null($taxonmomy_price['type_menu_price']))
         return '';
 
-    return '<span class="price-type-menu">' . $taxonmomy_price['type_menu_price'] . '</span>';
+    return '<span class="price-type-menu">' . $taxonmomy_price['type_menu_price'] . '€</span>';
 }
 
 /**

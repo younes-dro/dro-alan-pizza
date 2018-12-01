@@ -30,6 +30,13 @@ if (!function_exists('dro_alan_pizza_trader_setup')) {
                 'post_type' => 'page'
                     )
             );
+            new MultiPostThumbnails(
+                    array(
+                'label' => __('Secondary Image', 'dro-alan-pizza'),
+                'id' => 'secondary-image-type-menu',
+                'post_type' => 'menu'
+                    )
+            );            
         }
     }
 
