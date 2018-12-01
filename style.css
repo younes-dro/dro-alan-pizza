@@ -59,10 +59,10 @@ a.see-all{
     position: fixed;
     width: 50px;
     height: 50px;
-    bottom: 2rem;
-    right: 1rem;
-    background-color: #000;
-    opacity: .5;
+    bottom: 10px;
+    right: 10px;
+    background-color: #e21f26;
+    /*opacity: .5;*/
     display: none;
     border-radius: 50%;
     text-align: center;
@@ -322,7 +322,7 @@ p.site-description{
         /*font-size: 1.5rem;*/
     }
     .header-background-image{
-        height: 40vh;
+        height: 60vh;
     }
     .title-box{
         padding: 1rem;
@@ -386,9 +386,12 @@ p.site-description{
         color: #f6f6f6;
     }
 }
-@media only screen and (min-width: 320px) and (max-width: 992px) and (orientation: landscape) {
-    .header-background-image{
-        height: 60vh;
+@media only screen  and (orientation: landscape) {
+    .header-background-image.site-branding{
+        padding-top: 45px;
+    }
+    .senior_mega_wrapper{
+        /*border: 1px solid #f00;*/
     }
 }
 
@@ -401,7 +404,7 @@ p.site-description{
 .main-navigation.sticky-header,
 .toggle-menu-container-class.sticky-header{
     position: fixed; 
-    left: 0; 
+    /*left: 0;*/ 
     right: 0; 
     width: 100%;
     background: hsla(0, 0%, 0%, 0.7);

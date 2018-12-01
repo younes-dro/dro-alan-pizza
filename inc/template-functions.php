@@ -133,7 +133,7 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                             </div>
                         </div>
                     </div><!-- .row -->
-                    <div class="row">
+                    <div class="row justify-content-center">
                         <?php while ($query->have_posts()) { ?>
                             <article id="post-<?php the_ID(); ?>"  <?php post_class(array('col-xs-12 col-sm-6 col-md-3 ')); ?>>
                                 <?php

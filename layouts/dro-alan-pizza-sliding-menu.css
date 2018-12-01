@@ -1,0 +1,44 @@
+/*
+* display the mobile menu for all screen 
+*/
+.wp_mm_wrapper {
+    height: calc(100vh - 45px);
+    top: 45px;
+}
+#toggle-menu-container {
+    background: hsla(0, 0%, 0%, .7);
+    z-index: 9999;
+}
+section.phone{
+    z-index: 9999;
+}
+section.phone h1.phone-number a{
+    display: inline-block;
+}
+@media screen and (min-width: 768px){
+    #toggle-menu-container {
+        width: 100%; 
+    }
+}
+@media screen and (min-width:992px){
+
+    body.wp_mm_enable {
+         overflow: hidden;
+    }
+    #toggle-menu-container {
+        width: 55px; 
+    }
+    .site-header nav{
+        padding-right: 80px;
+    }
+    .body_overlay{
+        display: none;
+    }
+    .wp_mm_wrapper,
+    #toggle-menu,
+    .body_overlay.enabled,
+    #toggle-menu-container{
+        display: initial;
+    }
+}
+
