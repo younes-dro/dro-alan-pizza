@@ -72,27 +72,6 @@ get_header();
                     );                    
                     dro_alan_pizza_element_pizza($args);
                     ?>
-                    <div class="container-fluid horaire-zone-livraison-wrapper">
-                        <div class="row">
-                            <div class="col-12 col-md-1"></div>
-                            <div class="col-12 col-md-4  horaire">
-                                <h1>OUVERT 7J/7 DE 11H00 A 14H30 / DE 18H A 23H00</h1>
-                                <h3>SAMEDI ET DIMANCHE DE 11H00 A 15H00 / DE 18H00 A 23H30</h3>
-                            </div>
-                            <div class="col-12 col-md-2"></div>
-                            <div class="col-12 col-md-4 zone-livraison">
-                                <h1>Nos zones de livraison :</h1>
-                                <p>
-                                    <span>Cergy st Christophe</span><span> Cergy Le Haut</span>
-                                    <span>Vauréal</span> <span>Jouy Le Moutier</span> 
-                                    <span>Boisement</span>
-                                    <span>Menucourt</span> <span>Maurecourt</span>
-                                    <span>Courdimanche</span>
-                                </p>
-                            </div>
-                            <div class="col-12 col-md-1"></div>
-                        </div>
-                    </div>
                 </main><!-- #main -->
             </div><!-- #primary -->
         </div><!-- .col-lg-9 -->
