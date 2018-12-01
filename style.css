@@ -757,7 +757,8 @@ span.fa{
 .bg_fromagio{
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center right;    
+    background-position: center right; 
+    min-height: 200px;
 }
 .bg_fromagio img{
     max-width: 80%;

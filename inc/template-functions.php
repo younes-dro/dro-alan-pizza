@@ -61,8 +61,8 @@ if (!function_exists('dro_alan_pizza_fromagio')) {
             ?>
             <div class="break-line"></div>
             <div class="element-pizza-wrapper  la-fromagio-wrapper">
-                <div class="element-pizza-banner <?php echo $bg_class ?>"></div>
-                <div class="element-pizza-overlay"></div>
+<!--                <div class="element-pizza-banner <?php echo $bg_class ?>"></div>
+                <div class="element-pizza-overlay"></div>-->
                 <div class="container-fluid element-pizza">
 
 
