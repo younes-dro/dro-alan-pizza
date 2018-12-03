@@ -30,7 +30,7 @@ get_header();
                         'tax_query' => array(
                             array('taxonomy' => 'type_pizza',
                                 'field' => 'term_id',
-                                'terms' => 198// 198 //6 //198
+                                'terms' =>  198 // 6 //198
                             )
                         ),
                         'orderby' => 'title',
@@ -42,7 +42,7 @@ get_header();
                         'class' => 'big-green',
                         'promo' => '',
                         'come_from' => '',
-                        'term_id' =>  198 ,// 6,  // 198
+                        'term_id' => 198 , // 6,  // 198
                         'bg_class' => 'element-pizza-banner-creme'
                     );
                     dro_alan_pizza_element_pizza($args);
@@ -55,7 +55,7 @@ get_header();
                             array(
                                 'taxonomy' => 'type_pizza',
                                 'field' => 'term_id',
-                                'terms' => 197 //5 // 5 197
+                                'terms' => 197, // 5 //197
                             )
                         ),
                         'orderby' => 'title',
@@ -67,7 +67,7 @@ get_header();
                         'class' => 'big-green',
                         'promo' => '',
                         'come_from' => '',
-                        'term_id' =>  197, // 5, // 6
+                        'term_id' =>  197, //5, // 6
                         'bg_class' => 'element-pizza-banner-sauce'
                     );                    
                     dro_alan_pizza_element_pizza($args);

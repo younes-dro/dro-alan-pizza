@@ -479,13 +479,10 @@ p.site-description{
     height: 100%;
 }
 .element-pizza-banner-sauce{
-    background-image: url(images/promo-and-type-pizza/rapide-pizza-sauce-tomate-vaureal.jpg);
+    background-image: url(images/bg-type-pizza-frontpage/rapide-pizza-sauce-tomate-vaureal.jpg);
 }
 .element-pizza-banner-creme{
-    background-image: url(images/promo-and-type-pizza/pizza-3.jpg);
-}
-.element-pizza-banner-promo{
-    background-image: url(images/promo-and-type-pizza/promotion-pizza-vaureal_2.jpg);
+    background-image: url(images/bg-type-pizza-frontpage/pizza-fromage-creme-fraiche-vaural.jpg);
 }
 .element-pizza-overlay{
     position: absolute;

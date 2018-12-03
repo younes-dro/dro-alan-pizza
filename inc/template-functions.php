@@ -249,7 +249,7 @@ if (!function_exists('dro_alan_pizza_price')) {
 function get_the_type_menu_price($term_id) {
 
     $taxonmomy_price = get_option("taxonomy_" . $term_id);
-    if (is_null($taxonmomy_price['type_menu_price']))
+    if (is_null($taxonmomy_price['type_menu_price']) || empty($taxonmomy_price['type_menu_price']))
         return '';
 
     return '<span class="price-type-menu">' . $taxonmomy_price['type_menu_price'] . '€</span>';
