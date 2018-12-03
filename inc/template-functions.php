@@ -150,7 +150,13 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                         </div><!-- /.row -->
                                         <div class="row">
                                             <div class="col-12 pizza-image">
-                                                <?php the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle')) ?>
+                                                <?php 
+                                                if (has_post_thumbnail()):
+                                                    the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle'));
+                                                else:
+                                                    echo '<img src="'.CHILD_THEME_URI.'/images/pizza-vaureal.png" alt="pizzeria vaureal">';
+                                                endif;  
+                                                ?>
                                             </div><!-- .col-12 /. image-pizza-->
                                             <div class="col-12">
                                                 <button class=" btn-details btn btn-dark btn-light btn-sm"><i class="fa fa-plus">&nbsp;</i>Détails </button>
