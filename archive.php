@@ -31,14 +31,14 @@ get_header('archive');
                             if ($wp_query->queried_object->taxonomy == 'type_pizza'):
                                 $type_pizza_query = new WP_Query(array(
                                     'post_type' => 'pizza',
+                                    'orderby'   => 'title',
+                                    'order'     => 'ASC',
                                     'tax_query' => array(
                                         array('taxonomy' => 'type_pizza',
                                             'field' => 'term_id',
                                             'terms' => $wp_query->queried_object->term_id //6 //198
                                         )
                                     ),
-                                    'orderby' => 'title',
-                                    'order' => 'ASC'
                                 ));
                                 $args = array(
                                     'query' => $type_pizza_query,
@@ -50,10 +50,10 @@ get_header('archive');
                                     'bg_class' => ''
                                 );
                                 ?>
-                             <div class="col-12">
-                                <?php dro_alan_pizza_element_pizza($args); ?>
-                             </div>
-                            <?php
+                                <div class="col-12">
+                                    <?php dro_alan_pizza_element_pizza($args); ?>
+                                </div>
+                                <?php
                             else:
 
 

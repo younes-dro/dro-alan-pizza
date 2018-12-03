@@ -25,32 +25,34 @@ get_header();
                     ?>
                     <?php
                     $creme_fraiche = new WP_Query(array(
-                        'post_type' => 'pizza',
-                        'posts_per_page' => 4,
+                        'post_type'         => 'pizza',
+                        'posts_per_page'    => 4,
+                        'orderby'           => 'title',
+                        'order'             => 'ASC',
                         'tax_query' => array(
                             array('taxonomy' => 'type_pizza',
                                 'field' => 'term_id',
                                 'terms' =>  198 // 6 //198
                             )
                         ),
-                        'orderby' => 'title',
-                        'order' => 'ASC'
                     ));
                     $args = array(
-                        'query' => $creme_fraiche,
-                        'title' => 'Pizza à Base Crème Fraîche',
-                        'class' => 'big-green',
-                        'promo' => '',
+                        'query'     => $creme_fraiche,
+                        'title'     => 'Pizza à Base Crème Fraîche',
+                        'class'     => 'big-green',
+                        'promo'     => '',
                         'come_from' => '',
-                        'term_id' => 198 , // 6,  // 198
-                        'bg_class' => 'element-pizza-banner-creme'
+                        'term_id'   => 198 , // 6,  // 198
+                        'bg_class'  => 'element-pizza-banner-creme'
                     );
                     dro_alan_pizza_element_pizza($args);
                     ?>
                     <?php
                     $sauce_tomate = new WP_Query(array(
-                        'post_type' => 'pizza',
-                        'posts_per_page' => 4,
+                        'post_type'         => 'pizza',
+                        'posts_per_page'    => 4,
+                        'orderby'           => 'title',
+                        'order'             => 'ASC',                        
                         'tax_query' => array(
                             array(
                                 'taxonomy' => 'type_pizza',
@@ -58,8 +60,6 @@ get_header();
                                 'terms' => 197, // 5 //197
                             )
                         ),
-                        'orderby' => 'title',
-                        'order' => 'ASC'
                     ));
                     $args = array(
                         'query' => $sauce_tomate,
