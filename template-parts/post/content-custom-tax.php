@@ -7,7 +7,7 @@
  * @package dro_caterer
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(array('col-12 col-md-4')); ?>>
+<article  id="post-<?php the_ID(); ?>" <?php post_class(array('col-12 col-md-4')); ?>>
     <header class="entry-header">
         <?php
         if (is_singular()) :
@@ -25,6 +25,16 @@
                 ?>
             </div><!-- .entry-meta -->
         <?php endif; ?>
+            <?php
+            // Price for custom post type Apres Repas
+            if ($wp_query->queried_object->taxonomy == 'type_apres_repas'):
+                $price_apres_repas = get_post_meta(get_the_ID());
+//                var_dump($price_apres_repas['price_apres_repas']);
+                if(!empty($price_apres_repas['price_apres_repas'][0])):
+                    echo '<span class="price-type-menu">'.$price_apres_repas['price_apres_repas'][0].'€</span>';
+                endif;
+            endif;
+            ?>
     </header><!-- .entry-header -->
 
     <?php dro_caterer_post_thumbnail(); ?>

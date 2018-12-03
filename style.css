@@ -730,7 +730,8 @@ span.fa{
     margin: 0 auto;
     padding-top: 15px;
     font-size: 2rem;
-    padding-right: 15px
+    padding-right: 15px;
+    font-family: 'Courgette', cursive;
 }
 
 .archive .element-pizza-wrapper{
