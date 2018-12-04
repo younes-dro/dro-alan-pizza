@@ -1,9 +1,11 @@
 ﻿<?php
-function get_infos_options($field){
+
+function get_infos_options($field) {
     $dro_alan_pizza_infos_options = get_option('dro_alan_pizza_infos_options');
-    
+
     return $dro_alan_pizza_infos_options[$field];
 }
+
 function get_senior_mega_price_options() {
     $dro_alan_pizza_options = get_option('dro_alan_pizza_options');
     ?>
@@ -61,7 +63,7 @@ if (!function_exists('dro_alan_pizza_fromagio')) {
             ?>
             <div class="break-line"></div>
             <div class="element-pizza-wrapper  la-fromagio-wrapper">
-<!--                <div class="element-pizza-banner <?php echo $bg_class ?>"></div>
+            <!--                <div class="element-pizza-banner <?php echo $bg_class ?>"></div>
                 <div class="element-pizza-overlay"></div>-->
                 <div class="container-fluid element-pizza">
 
@@ -150,12 +152,12 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                         </div><!-- /.row -->
                                         <div class="row">
                                             <div class="col-12 pizza-image">
-                                                <?php 
+                                                <?php
                                                 if (has_post_thumbnail()):
                                                     the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle'));
                                                 else:
-                                                    echo '<img src="'.CHILD_THEME_URI.'/images/pizza-vaureal.png" alt="pizzeria vaureal">';
-                                                endif;  
+                                                    echo '<img src="' . CHILD_THEME_URI . '/images/pizza-vaureal.png" alt="pizzeria vaureal">';
+                                                endif;
                                                 ?>
                                             </div><!-- .col-12 /. image-pizza-->
                                             <div class="col-12">
@@ -183,7 +185,13 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                             <div class="modal-body">
                                                 <div class="row">
                                                     <div class="col-12">
-                                                        <?php the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle')) ?>
+                                                        <?php
+                                                        if (has_post_thumbnail()):
+                                                            the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle'));
+                                                        else:
+                                                            echo '<img src="' . CHILD_THEME_URI . '/images/pizza-vaureal.png" alt="pizzeria vaureal">';
+                                                        endif;
+                                                        ?>
                                                     </div>
                                                     <div class="col-12">
                                                         <?php the_excerpt() ?>
@@ -194,15 +202,15 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="col-12">
-                                                            <a  href="tel:<?php echo get_infos_options('tele_1')?>">
+                                                            <a  href="tel:<?php echo get_infos_options('tele_1') ?>">
                                                                 <span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span>
-                                                                <span class="call-alanpizza"><?php echo get_infos_options('tele_1')?></span>
+                                                                <span class="call-alanpizza"><?php echo get_infos_options('tele_1') ?></span>
                                                             </a>
                                                         </div>
                                                         <div class="col-12">
-                                                            <a  href="tel:<?php echo get_infos_options('tele_2')?>">
+                                                            <a  href="tel:<?php echo get_infos_options('tele_2') ?>">
                                                                 <span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span>
-                                                                <span class="call-alanpizza"><?php echo get_infos_options('tele_2')?></span>
+                                                                <span class="call-alanpizza"><?php echo get_infos_options('tele_2') ?></span>
                                                             </a>
                                                         </div>
                                                     </div>
@@ -212,7 +220,7 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                     </div>
                                 </div><!-- End Modal content -->                                    
                             </article>
-                        <?php }// End while promo have_posts()         ?>
+                        <?php }// End while promo have_posts()          ?>
                     </div><!-- /.row Promo -->
                 </div><!-- .container / .element-pizza -->
             </div><!-- element-pizza wrapper -->
