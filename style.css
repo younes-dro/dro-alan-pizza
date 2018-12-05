@@ -61,21 +61,21 @@ a.scrollup{
     height: 50px;
     bottom: 50px;
     right: 10px;
-    background-color: hsla(0, 0%, 0%, 0.40);
+    background-color: hsla(0, 0%, 82%, 0.4);
     /*opacity: .5;*/
     display: none;
     border-radius: 50%;
     text-align: center;
-    padding: 10px 0 0 0;
+    padding: 13px 0 0 0;
     /*color: #fff;*/
     z-index: 99;
 }
 a.scrollup:hover{
-    background-color: hsla(0, 0%, 0%, 1);
+    background-color: hsla(0, 0%, 82%, 1);
 }
 a.scrollup:visited{ color: #fff;}
 a.scrollup > i {
-    color: #fff;
+    color: #000;
 }
 footer p.signature{
     color: #ccc;
