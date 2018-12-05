@@ -51,7 +51,7 @@ get_header('archive');
                                 );
                                 ?>
                                 <div class="col-12">
-                                    <?php dro_alan_pizza_element_pizza($args); ?>
+                                    <?php dro_alan_pizza_element_pizza_slick($args); ?>
                                 </div>
                                 <?php
                             else:

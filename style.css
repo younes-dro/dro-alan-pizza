@@ -61,7 +61,7 @@ a.scrollup{
     height: 50px;
     bottom: 50px;
     right: 10px;
-    background-color: hsla(0, 0%, 82%, 0.4);
+    background-color: hsla(0, 0%, 82%, 0.40);
     /*opacity: .5;*/
     display: none;
     border-radius: 50%;

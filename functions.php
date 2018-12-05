@@ -59,6 +59,15 @@ if (!function_exists('dro_alan_pizza_scripts')) {
         wp_enqueue_style('font-awesome', CHILD_THEME_URI . '/assets/font-awesome/css/font-awesome.min.css');
         wp_enqueue_style('gogle-fonts-courgette', 'https://fonts.googleapis.com/css?family=Courgette');
         wp_enqueue_style('dro-alan-pizza-lato', 'https://fonts.googleapis.com/css?family=Lato');
+        
+//        wp_enqueue_style('dro-alan-pizza-owl-carousel', CHILD_THEME_URI.'/layouts/owl.carousel.min.css');
+//        wp_enqueue_style('dro-alan-pizza-owl-carousel-theme-default', CHILD_THEME_URI.'/layouts/owl.theme.default.css');
+          
+        wp_enqueue_style('dro-alan-pizza-slick-css', CHILD_THEME_URI.'/assets/slick/slick.css');
+        wp_enqueue_style('dro-alan-pizza-slick-theme-css', CHILD_THEME_URI.'/assets/slick/slick-theme.css');
+        
+        wp_enqueue_style('dro-alan-pizza-custom-slick-css', CHILD_THEME_URI.'/layouts/dro-alan-pizza-custom-slick.css');
+        
         if (is_front_page()) {
 //            wp_enqueue_style('animate-wow', CHILD_THEME_URI . '/assets/libs/animate.css');
         }
@@ -70,11 +79,13 @@ if (!function_exists('dro_alan_pizza_scripts')) {
         wp_deregister_script('dro-caterer-js');
         wp_dequeue_script('dro-caterer-one-page-js');
         wp_deregister_script('dro-caterer-one-page-js');
-        wp_enqueue_script('dro-alan-pizza-js', CHILD_THEME_URI . '/js/dro-alan-pizza.js', array('jquery'), '20181911', TRUE);
-
-        if (is_front_page()) {
+        wp_enqueue_script('dro-alan-pizza-js', CHILD_THEME_URI . '/js/dro-alan-pizza.js', array('jquery','dro-alan-pizza-slick-js'), '20181911', TRUE);
+        
+//        wp_enqueue_script('dro-alan-pizza-owl-carousel', CHILD_THEME_URI . '/js/owl.carousel.min.js', array('jquery'), '20181911', TRUE);
+            wp_enqueue_script('dro-alan-pizza-slick-js', CHILD_THEME_URI . '/assets/slick/slick.js', array('jquery',), '20181911', TRUE);
+//        if (is_front_page()) {
 //            wp_enqueue_script('alan-pizza-js', CHILD_THEME_URI . '/assets/js/alan-pizza/alan-pizza.js', array('jquery'));
-        }
+//        }
     }
 
 }

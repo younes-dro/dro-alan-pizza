@@ -221,16 +221,70 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                 </div><!-- End Modal content -->                                    
                             </article>
                         <?php }// End while promo have_posts()          ?>
-                    </div><!-- /.row Promo -->
-                </div><!-- .container / .element-pizza -->
+                    </div><!-- /.row -->
+                </div><!-- .container-fluid / .element-pizza -->
             </div><!-- element-pizza wrapper -->
 
             <?php
-        } // End if promo have_posts()
+        } // End have_posts()
         wp_reset_postdata();
     }
 
 }
+
+function dro_alan_pizza_element_pizza_slick($args) {
+    extract($args);
+    if ($query->have_posts()) {
+        ?>
+        <div class="break-line"></div>
+        <div class="element-pizza-wrapper">
+            <div class="element-pizza-banner <?php echo $bg_class ?>"></div>
+            <div class="element-pizza-overlay"></div>
+            <div class="container-fluid element-pizza">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-header">
+                            <h1>
+                                <span class="<?php echo $class ?>"><?php echo $title ?></span>
+                            </h1>
+                        </div>
+                    </div>
+                </div><!-- .row -->
+                <div class="row dro-alan-pizza-slick details-element-pizza">
+                    <?php
+                    while ($query->have_posts()) {
+                        $query->the_post();
+                        ?>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <span class="pizza-title"><?php the_title() ?></span>
+                                </div>
+                            </div><!-- /.row -->
+                            <div class="row">
+                                <div class="col-12 pizza-image">
+                                    <?php
+                                    if (has_post_thumbnail()):
+                                        the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle'));
+                                    else:
+                                        echo '<img src="' . CHILD_THEME_URI . '/images/pizza-vaureal.png" alt="pizzeria vaureal">';
+                                    endif;
+                                    ?>
+                                </div><!-- .col-12 /. image-pizza-->
+                                <div class="col-12">
+                                    <button class=" btn-details btn btn-dark btn-light btn-sm"><i class="fa fa-plus">&nbsp;</i>Détails </button>
+                                </div><!-- ./ details -->                                            
+                            </div><!-- ./row-->
+                        </div><!-- ./ col-12 -->
+                    <?php }// End while promo have_posts()  ?>
+                </div><!-- ./row-->
+            </div><!-- .container-fluid / .element-pizza -->
+        </div><!-- element-pizza wrapper -->                
+        <?php
+    } // End have_posts()
+    wp_reset_postdata();
+}
+
 /**
  * To remove 
  */
