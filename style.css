@@ -515,12 +515,12 @@ p.site-description{
     max-height: 300px;
     padding: 5px;
 }
-.details-element-pizza > .col-12{
+.unit-pizza.col-12{
     border: 1px solid rgba(255, 255, 255, 0.1);
 
 }
 .details-element-pizza .pizza-image img,
-.element-pizza .modal-body img{
+ .modal-body img{
     max-width: 150px;
     background-color: transparent;
     border: none;
@@ -573,7 +573,7 @@ span.fa{
 
 }
 
-.element-pizza .modal-title{
+.modal-title{
     color: #fff;
     font-family: 'Montserrat-Regular';
     font-weight: 900;
@@ -586,10 +586,10 @@ span.fa{
 .element-pizza button.close span{
     color: #fff;
 }
-.element-pizza .modal-body{
+.modal-body{
     text-align: center;
 }
-.element-pizza .modal-body p{
+.modal-body p{
     margin-top: 1rem;
     color: #fff;
 }

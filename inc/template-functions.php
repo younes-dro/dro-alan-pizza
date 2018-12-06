@@ -144,7 +144,7 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                 ?>
 
                                 <a class="row details-element-pizza" href="#<?php echo basename(get_permalink()) ?>" data-toggle="modal" >
-                                    <div class="col-12">
+                                    <div class="col-12 unit-pizza">
                                         <div class="row">
                                             <div class="col-12">
                                                 <span class="pizza-title"><?php the_title() ?></span>
@@ -164,61 +164,11 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                                 <button class=" btn-details btn btn-dark btn-light btn-sm"><i class="fa fa-plus">&nbsp;</i>Détails </button>
                                             </div><!-- ./ details -->                                            
                                         </div><!-- ./row-->
-                                    </div><!-- ./ col-12 -->
+                                    </div><!-- ./ col-12 .unit-pizza  -->
                                 </a> <!--  / row / . details-element-pizza -->
                                 <!-- Modal content  -->
-                                <div class="modal fade" style="z-index: 123999942222" id="<?php echo basename(get_permalink()) ?>" tabindex="-1"  aria-labelledby="exampleModalLabel">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content" style="background-color: #303030;">
-                                            <div class="modal-header">
-                                                <div class="container-fluid">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <h4 class="modal-title" id="exampleModalLabel">
-                                                                <?php the_title() ?>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <?php
-                                                        if (has_post_thumbnail()):
-                                                            the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle'));
-                                                        else:
-                                                            echo '<img src="' . CHILD_THEME_URI . '/images/pizza-vaureal.png" alt="pizzeria vaureal">';
-                                                        endif;
-                                                        ?>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <?php the_excerpt() ?>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <a  href="tel:<?php echo get_infos_options('tele_1') ?>">
-                                                                <span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span>
-                                                                <span class="call-alanpizza"><?php echo get_infos_options('tele_1') ?></span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <a  href="tel:<?php echo get_infos_options('tele_2') ?>">
-                                                                <span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span>
-                                                                <span class="call-alanpizza"><?php echo get_infos_options('tele_2') ?></span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- End Modal content -->                                    
+                                <?php display_modal(get_the_ID(), get_permalink(), get_the_title(), get_the_excerpt()) ?>
+                                <!-- End Modal content -->                                    
                             </article>
                         <?php }// End while promo have_posts()          ?>
                     </div><!-- /.row -->
@@ -242,7 +192,7 @@ function dro_alan_pizza_element_pizza_slick($args) {
             <div class="element-pizza-overlay"></div>
             <div class="container-fluid element-pizza">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 ">
                         <div class="page-header">
                             <h1>
                                 <span class="<?php echo $class ?>"><?php echo $title ?></span>
@@ -255,34 +205,174 @@ function dro_alan_pizza_element_pizza_slick($args) {
                     while ($query->have_posts()) {
                         $query->the_post();
                         ?>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-12">
-                                    <span class="pizza-title"><?php the_title() ?></span>
-                                </div>
-                            </div><!-- /.row -->
-                            <div class="row">
-                                <div class="col-12 pizza-image">
-                                    <?php
-                                    if (has_post_thumbnail()):
-                                        the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle'));
-                                    else:
-                                        echo '<img src="' . CHILD_THEME_URI . '/images/pizza-vaureal.png" alt="pizzeria vaureal">';
-                                    endif;
-                                    ?>
-                                </div><!-- .col-12 /. image-pizza-->
-                                <div class="col-12">
-                                    <button class=" btn-details btn btn-dark btn-light btn-sm"><i class="fa fa-plus">&nbsp;</i>Détails </button>
-                                </div><!-- ./ details -->                                            
-                            </div><!-- ./row-->
-                        </div><!-- ./ col-12 -->
+                        <a class="row details-element-pizza" href="#<?php echo basename(get_permalink()) ?>" data-toggle="modal" >
+                            <div class="col-12 unit-pizza">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <span class="pizza-title"><?php the_title() ?></span>
+                                    </div>
+                                </div><!-- /.row -->
+                                <div class="row">
+                                    <div class="col-12 pizza-image">
+                                        <?php
+                                        if (has_post_thumbnail()):
+                                            the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle'));
+                                        else:
+                                            echo '<img src="' . CHILD_THEME_URI . '/images/pizza-vaureal.png" alt="pizzeria vaureal">';
+                                        endif;
+                                        ?>
+                                    </div><!-- .col-12 /. image-pizza-->
+                                    <div class="col-12">
+                                        <button data-id="<?php the_ID() ?>"
+                                                data-title="<?php echo the_title() ?>"
+                                                class="btn-details btn btn-dark btn-light btn-sm">
+                                            <i class="fa fa-plus">&nbsp;</i>Détails
+                                        </button>
+                                        <div id="<?php the_ID() ?>-modal-image" style="display: none">
+                                            <?php echo dro_alan_pizza_has_thumbnail(get_the_ID()) ?>
+                                        </div>
+                                        <div id="<?php the_ID() ?>-modal-excerpt" style="display: none">
+                                            <?php the_excerpt() ?>
+                                        </div>
+                                    </div><!-- ./ details -->
+                                </div><!-- ./row-->
+                            </div><!-- ./ col-12 unit-pizza -->
+                        </a>
                     <?php }// End while promo have_posts()  ?>
-                </div><!-- ./row-->
+                </div><!-- ./row dro-alan-pizza-slick details-element-pizza -->
             </div><!-- .container-fluid / .element-pizza -->
         </div><!-- element-pizza wrapper -->                
         <?php
     } // End have_posts()
     wp_reset_postdata();
+}
+
+function display_modal($ID = '', $permlink = '', $the_title = '', $the_excerpt = '') {
+    ?>
+    <div class="modal fade" style="z-index: 123999942222" id="<?php echo basename($permlink) ?>" tabindex="-1"  aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: #303030;">
+                <div class="modal-header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4 class="modal-title" id="exampleModalLabel">
+                                    <?php echo $the_title; ?>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <?php
+//                            get_post_th
+                            if (has_post_thumbnail($ID)):
+                                echo get_the_post_thumbnail($ID, '', array('class' => 'img-responsive  img-thumbnail img-circle'));
+//                                the_post_thumbnail('', array('class' => 'img-responsive  img-thumbnail img-circle'));
+                            else:
+                                echo '<img src="' . CHILD_THEME_URI . '/images/pizza-vaureal.png" alt="pizzeria vaureal">';
+                            endif;
+                            ?>
+                        </div>
+                        <div class="col-12">
+                            <p><?php echo $the_excerpt; ?></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <a  href="tel:<?php echo get_infos_options('tele_1') ?>">
+                                    <span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span>
+                                    <span class="call-alanpizza"><?php echo get_infos_options('tele_1') ?></span>
+                                </a>
+                            </div>
+                            <div class="col-12">
+                                <a  href="tel:<?php echo get_infos_options('tele_2') ?>">
+                                    <span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span>
+                                    <span class="call-alanpizza"><?php echo get_infos_options('tele_2') ?></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>        
+    <?php
+}
+
+function display_modal_slick() {
+    ?>
+    <div class="modal fade" style="z-index: 123999942222" id="modalSlick" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: #303030;">
+                <div class="modal-header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4 class="modal-title">
+                                    <span class="modal-title-pizza"></span>
+                                    <!-- 
+                                    title
+                                    -->
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 modal-image-pizza ">
+
+                            <!-- 
+                            image 
+                            -->
+                        </div>
+                        <div class="col-12">
+                            <p class="modal-excerpt-pizza">
+                                <!-- 
+                                excerpt 
+                                -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <a  href="tel:<?php echo get_infos_options('tele_1') ?>">
+                                    <span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span>
+                                    <span class="call-alanpizza"><?php echo get_infos_options('tele_1') ?></span>
+                                </a>
+                            </div>
+                            <div class="col-12">
+                                <a  href="tel:<?php echo get_infos_options('tele_2') ?>">
+                                    <span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span>
+                                    <span class="call-alanpizza"><?php echo get_infos_options('tele_2') ?></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>        
+    <?php
+}
+
+function dro_alan_pizza_has_thumbnail($ID = '') {
+    if (has_post_thumbnail($ID)):
+        return get_the_post_thumbnail($ID, '', array('class' => 'img-responsive  img-thumbnail img-circle'));
+    else:
+        return '<img src="' . CHILD_THEME_URI . '/images/pizza-vaureal.png" alt="pizzeria vaureal">';
+    endif;
 }
 
 /**

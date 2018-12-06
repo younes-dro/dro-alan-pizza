@@ -31,8 +31,8 @@ get_header('archive');
                             if ($wp_query->queried_object->taxonomy == 'type_pizza'):
                                 $type_pizza_query = new WP_Query(array(
                                     'post_type' => 'pizza',
-                                    'orderby'   => 'title',
-                                    'order'     => 'ASC',
+                                    'orderby' => 'title',
+                                    'order' => 'ASC',
                                     'tax_query' => array(
                                         array('taxonomy' => 'type_pizza',
                                             'field' => 'term_id',
@@ -86,4 +86,5 @@ get_header('archive');
     </div><!-- .row -->
 </div><!-- ./ container-fluid -->
 <?php
+display_modal_slick();
 get_footer();

@@ -75,6 +75,20 @@
         $("html, body").animate({scrollTop: 0}, 200);
         return false;
     });
+    
+    /* Modal in archive page */
+                    $("body").on("click", ".btn-details", function (e) {
+                    e.preventDefault();
+                    var id      = $(this).data("id");
+                    var title   = $(this).data("title");
+                    var image   = $("#"+id+"-modal-image").html();
+                    var excerpt = $("#"+id+"-modal-excerpt").html();
+                    $("#modalSlick")
+                            .find(".modal-title-pizza").empty().prepend(title).end()
+                            .find(".modal-image-pizza").empty().prepend(image).end()
+                            .find(".modal-excerpt-pizza").empty().prepend(excerpt).end()
+                            .modal("show");
+                })
 
 })(jQuery);
 
