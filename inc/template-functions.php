@@ -251,7 +251,7 @@ function display_modal($ID = '', $permlink = '', $the_title = '', $the_excerpt =
     ?>
     <div class="modal fade" style="z-index: 123999942222" id="<?php echo basename($permlink) ?>" tabindex="-1"  aria-labelledby="exampleModalLabel">
         <div class="modal-dialog" role="document">
-            <div class="modal-content" style="background-color: #303030;">
+            <div class="modal-content">
                 <div class="modal-header">
                     <div class="container-fluid">
                         <div class="row">
@@ -310,7 +310,7 @@ function display_modal_slick() {
     ?>
     <div class="modal fade" style="z-index: 123999942222" id="modalSlick" tabindex="-1">
         <div class="modal-dialog" role="document">
-            <div class="modal-content" style="background-color: #303030;">
+            <div class="modal-content">
                 <div class="modal-header">
                     <div class="container-fluid">
                         <div class="row">

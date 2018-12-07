@@ -2,7 +2,12 @@
 *
 *   Custom slick css 
 */
-
+.slick-dotted.slick-slider{
+    margin-bottom: 100px;
+}
+.slick-dots{
+    bottom: -50px;
+}
 .dro-alan-pizza-slick .slick-prev,
 .dro-alan-pizza-slick .slick-next{
     top: 50%;
@@ -59,5 +64,8 @@
 @media screen and (min-width:992px){
     .dro-alan-pizza-slick .pizza-title{
         font-size: 1.5rem;
+    }
+    .slick-dots{
+        bottom: -50px;
     }
 }

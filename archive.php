@@ -32,6 +32,7 @@ get_header('archive');
                                 $type_pizza_query = new WP_Query(array(
                                     'post_type' => 'pizza',
                                     'orderby' => 'title',
+                                    'posts_per_page' => -1,
                                     'order' => 'ASC',
                                     'tax_query' => array(
                                         array('taxonomy' => 'type_pizza',

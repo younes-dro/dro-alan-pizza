@@ -520,7 +520,7 @@ p.site-description{
 
 }
 .details-element-pizza .pizza-image img,
- .modal-body img{
+.modal-body img{
     max-width: 150px;
     background-color: transparent;
     border: none;
@@ -572,7 +572,20 @@ span.fa{
 .modal-container{
 
 }
-
+.modal-content{
+    background-color: rgba(0, 0, 0, 0.94);
+}
+.modal-header{
+    border-bottom: 0;
+}
+.modal-footer{
+    border-top: 0;
+}
+.modal-title button.close{
+    color: #fff;
+    opacity: 1;
+    font-size: 2rem;
+}
 .modal-title{
     color: #fff;
     font-family: 'Montserrat-Regular';
