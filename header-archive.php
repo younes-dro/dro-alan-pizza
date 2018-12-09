@@ -16,6 +16,7 @@ global $taxonomy_image_url;
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="https://gmpg.org/xfn/11">
+        <meta name="theme-color" content="#e21f26">
 
         <?php wp_head(); ?>
     </head>
