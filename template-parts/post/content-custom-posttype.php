@@ -7,7 +7,10 @@
  * @package dro_caterer
  */
 ?>
+<?php
 
+//var_dump(get_the_terms(get_the_ID(),'type_menu'));
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('row justify-content-center'); ?>>
     <div class="container-fluid">
         <div class="row justify-content-center">
@@ -55,8 +58,20 @@
             </div>
 
 
-            <footer class="entry-footer">
-                <?php dro_caterer_entry_footer(); ?>
+            <footer class="entry-footer post-thumbnail">
+                <?php
+                /**
+                 * get the secondry image if exists
+                 */
+                if (class_exists('MultiPostThumbnails')) :
+                    $bg = MultiPostThumbnails::get_post_thumbnail_url(
+                                    'menu', 'secondary-image-type-menu',  get_the_ID()
+                    );
+                    if ($bg !== false) {
+                        echo '<img src="' . $bg . '">';
+                    }
+                endif;
+                ?>
             </footer><!-- .entry-footer -->
         </div>
     </div>
