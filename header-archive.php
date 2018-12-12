@@ -47,7 +47,7 @@ global $taxonomy_image_url;
                 <?php
                 $taxonomy_id = $wp_query->queried_object->term_id;
                 $taxonomy_image_id = get_term_meta($taxonomy_id, 'showcase-taxonomy-image-id', true);
-                $taxonomy_image_url = wp_get_attachment_image_url($taxonomy_image_id, 'header-taxonomy-image');
+                $taxonomy_image_url = wp_get_attachment_image_url($taxonomy_image_id,'full');
 //                var_dump($taxonomy_image_url);
                 ?>
                 <?php if ($taxonomy_image_url !== FALSE): ?>

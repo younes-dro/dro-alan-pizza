@@ -8,7 +8,6 @@
  */
 ?>
 <?php
-
 //var_dump(get_the_terms(get_the_ID(),'type_menu'));
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('row justify-content-center'); ?>>
@@ -32,6 +31,18 @@
                             ?>
                         </div><!-- .entry-meta -->
                     <?php endif; ?>
+                    <?php
+                        // If the men has a price
+                        $price = get_post_meta(get_the_ID());
+                        if (!empty($price['price_apres_repas'][0])):
+                            echo '<span class="price-type-menu">' . $price['price_apres_repas'][0] . '€</span>';
+                        endif; 
+                        if (!empty($price['price_chiken_wings'][0])):
+                            echo '<span class="price-type-menu">' . $price['price_chiken_wings'][0] . '€</span>';
+                        endif;
+                        // Or , we retrive the global type menu price
+//                        var_dump(get_ter)
+                    ?>
                 </header><!-- .entry-header -->
                 <div class="entry-content">
                     <?php
@@ -55,23 +66,23 @@
             </div>
             <div class="col-12 col-md-6">
                 <?php dro_caterer_post_thumbnail(); ?>
-            </div>
-
-
-            <footer class="entry-footer post-thumbnail">
                 <?php
                 /**
                  * get the secondry image if exists
                  */
                 if (class_exists('MultiPostThumbnails')) :
                     $bg = MultiPostThumbnails::get_post_thumbnail_url(
-                                    'menu', 'secondary-image-type-menu',  get_the_ID()
+                                    'menu', 'secondary-image-type-menu', get_the_ID()
                     );
                     if ($bg !== false) {
-                        echo '<img src="' . $bg . '">';
+                        echo '<div class="post-thumbnail"><img src="' . $bg . '"></div>';
                     }
                 endif;
                 ?>
+            </div>
+
+
+            <footer class="entry-footer post-thumbnail">
             </footer><!-- .entry-footer -->
         </div>
     </div>

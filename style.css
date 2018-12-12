@@ -47,13 +47,21 @@ h2.entry-title a:hover{
     color: #0037de;
 }
 a.see-all{
-    /* text-decoration: underline; */
     display: block;
     padding: 1rem;
-    margin: 0 auto;
+    margin: 10px auto 0;
     transition: all 1s;
     color: #ccc;
     font-size: .9rem;
+    border: 1px solid #ccc;
+    width: 120px;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.see-all.see-all-bottom{
+    z-index: 999;
 }
 a.scrollup{
     position: fixed;
@@ -385,8 +393,7 @@ p.site-description{
     }
     a.see-all{
         display: inline-block;
-        font-size: 1rem;
-        color: #f6f6f6;
+        color: #ccc
     }
 }
 @media only screen  and (orientation: landscape) {
@@ -463,11 +470,11 @@ p.site-description{
     height: 100%;
 }
 /*--------------------------------------------------------------
-# Front Page , single , post type
+# Front Page, post type
 --------------------------------------------------------------*/
 .element-pizza-wrapper{
     position: relative;
-    padding: 2rem 0 0 0;
+    padding: 2rem 0 1rem 0;
     /* margin-bottom: 2rem; */
     background-color: #000;
 }
@@ -498,20 +505,15 @@ p.site-description{
 
 }
 .element-pizza{
-    /* border: 1px solid; */
-    /*margin: 0 0 20px 0;*/
-    /* border-bottom: 1px solid orange; */
-
     background-repeat: repeat;
 }
 .element-pizza .page-header h1 span.big-green,
 .element-pizza .page-header h1 span.big-red{
-    color: #fff;
+    color: #ec9003;
     font-size: 1.75rem;
 }
 .details-element-pizza{
     text-align: center;
-    /*height: 300px;*/
     max-height: 300px;
     padding: 5px;
 }
@@ -573,7 +575,7 @@ span.fa{
 
 }
 .modal-content{
-    background-color: rgba(0, 0, 0, 0.94);
+    background-color: hsla(8, 61%, 15%);
 }
 .modal-header{
     border-bottom: 0;
@@ -671,6 +673,9 @@ span.fa{
         padding: 15px 30px;
         font-size: 1.2rem;
     }
+    .see-all.see-all-bottom{
+        display: none;
+    }
 }
 @media screen and (min-width: 992px){
     .element-pizza .page-header h1 span.big-red,
@@ -692,7 +697,11 @@ span.fa{
     text-align: center;
 }
 .archive .header-background-image{
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
+    height: 30%;
+    max-height: 350px;
+    padding-top: 45px;
+
 }
 
 .archive .site-content{
@@ -730,6 +739,9 @@ span.fa{
     max-width: 150px;
     height: auto;
 }
+.archive div.article-inner-wrapper{
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 .archive .hentry {
     text-align: center;
 }
@@ -759,17 +771,59 @@ span.fa{
     margin: 0 auto;
 }
 /*--------------------------------------------------------------
-# Side bar front page 
+# single page
 --------------------------------------------------------------*/
-.aside-img-container{
-
-    margin: 5px 0 5px 0
+.single article{
+    background-color: #222;
+    padding: 20px 0;
 }
-.aside-img-container img{
+.single h1.entry-title{
+    text-align: center;
+    color: #ec9003;
+}
+.single .entry-content p{
+    text-align: center;
+}
+.single .post-thumbnail{
+    text-align: center;
+}
+.single div.post-thumbnail img{
+    max-width: 150px;
+}
+/* secondry image */
+.single footer.post-thumbnail{
+    text-align: center;
+}
+.single footer.post-thumbnail img{
+    max-width: 80px;
+}
+
+.single nav.post-navigation{
+    padding: 0 10px;
+}
+.single .nav-links .nav-previous,
+.single .nav-links .nav-next{
+    background-color: #222222;
+    text-align: center;
+    border-radius: 5px;
+    width: 40%;
+}
+.single span.price-type-menu{
+    color: #fff;
     display: block;
-    max-width: 200px;
-    height: auto;
+    /*border: 1px solid #F0F;*/
+    background-image: url(images/price.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 150px;
+    height: 80px;
     margin: 0 auto;
+    padding-top: 15px;
+    font-size: 2rem;
+    /*padding-left: 20px;*/
+    text-align: center;
+    font-family: 'Courgette', cursive;
 }
 /*--------------------------------------------------------------
 # Section Fromagio in front page 
@@ -792,6 +846,7 @@ span.fa{
 .fromagio-content h1{
     /*font-family: 'Lato', sans-serif;*/
     color: #000;
+    margin-top: 0;
 }
 .fromagio-content p{
     color: #000;
@@ -804,11 +859,11 @@ span.fa{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    width: 100px;
-    height: 60px;
+    width: 120px;
+    height: 80px;
     margin: 0 auto;
-    padding-top: 15px;
-    font-size: 1rem;
+    padding-top: 20px;
+    font-size: 1.5rem;
     padding-right: 15px;
 }
 .fromagio-content a{

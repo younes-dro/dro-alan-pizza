@@ -12,13 +12,6 @@ if (!function_exists('dro_alan_pizza_trader_setup')) {
      */
     function dro_alan_pizza_trader_setup() {
 
-
-        /*
-         * Add image size for custom taxonmy 
-         * 
-         */
-        add_image_size('header-taxonomy-image', 1124, 250, TRUE);
-
         /**
          * MultiPostThumbnails
          */
