@@ -575,6 +575,7 @@ span.fa{
 
 }
 .modal-content{
+    background-color: #3e150f;
     background-color: hsla(8, 61%, 15%);
 }
 .modal-header{
