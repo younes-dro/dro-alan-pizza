@@ -56,7 +56,7 @@
                     <p>
                         <?php
                         /* translators: 1: Theme name, 2: Theme author. */
-                        printf(esc_html__('%1$s by %2$s.', 'dro-alan-pizza'), 'Alan Pizza Theme ', '<a  title = "développeur web freelance maroc" href="http://www.dro.123.fr/">Younes DRO</a>');
+                        printf(esc_html__('%1$s by %2$s.', 'dro-alan-pizza'), 'Alan Pizza Theme ', '<a  title = "développeur web freelance maroc" href="https://github.com/younes-dro">Y&D</a>');
                         ?>
                     </p>
                 </div><!-- .site-info -->
