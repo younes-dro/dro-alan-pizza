@@ -248,6 +248,22 @@ p.site-description{
     transition: all 1s;
     z-index: 99999;
 }
+.paiement-mode{
+    position: absolute;
+    top: 55px;
+    left: 10px;
+}
+.paiement-mode img{
+    max-width: 80px;
+}
+.pizza-halal{
+    position: absolute;
+    top: 55px;
+    right: 10px;
+}
+.pizza-halal img{
+    max-width: 40px;
+}
 .senior_mega_wrapper{
     background-color: rgba(48, 48, 48, 0.7);
     padding-top: 10px;
@@ -402,6 +418,9 @@ p.site-description{
     }
     .senior_mega_wrapper{
         /*border: 1px solid #f00;*/
+    }
+    .paiement-mode img{
+        max-width: 40px
     }
 }
 
