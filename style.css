@@ -663,6 +663,13 @@ span.fa{
     text-align: center;
     padding: 10px;
 }
+h5.horaire-overture,
+h5.text-livraion{
+  color: #fff;
+  font-size: .1rem;
+  margin: 0 auto;
+  padding: 0;
+}
 .horaire h1,
 .horaire h3,
 .zone-livraison h1{
@@ -680,6 +687,13 @@ span.fa{
     color: #fff;
     border-radius: 4px;
     border: 1px solid #fff;
+}
+footer .site-info h5.paiement-acceptee,
+footer .site-info p.paiement-acceptee{
+    color: #264d20;
+    margin: 0;
+    padding: 0;
+    font-size: .1rem;
 }
 @media screen and (min-width:768px){
     .page-header h1{
@@ -854,11 +868,12 @@ span.fa{
 .bg_fromagio{
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center right; 
+    background-position: center center;
+    text-align: center;
     min-height: 200px;
 }
 .bg_fromagio img{
-    max-width: 80%;
+    max-width: 100%;
 }
 .fromagio-content{
     text-align: center;

@@ -8,7 +8,7 @@
  */
 get_header('archive');
 ?>
-<div class="container-fluid">
+<div class="container-fluid" >
     <div class="row">
         <div class="col-12">
             <div id="primary" class="content-area">

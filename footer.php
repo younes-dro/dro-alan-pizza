@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * The template for displaying the footer
  *
@@ -13,12 +13,15 @@
     <div class="row">
         <div class="col-12 col-md-1"></div>
         <div class="col-12 col-md-4  horaire">
-            <h1>OUVERT 7J/7 DE 11H00 A 14H30 / DE 18H A 23H00</h1>
-            <h3>SAMEDI ET DIMANCHE DE 11H00 A 15H00 / DE 18H00 A 23H30</h3>
+            <h5 class="horaire-overture">horaire d'ouverture de pizzeria sur la ville de vauréal : </h5>
+            <h1>LUNDI AU VENDREDI DE 18H00 A 23H00</h1>
+            <!-- <h3>VENDREDI DE 18H00 A 23H00</h3> -->
+            <h3>SAMEDI ET DIMANCHE DE 11H45 A 15H00 / DE 18H00 A 23H00</h3>
         </div>
         <div class="col-12 col-md-2"></div>
         <div class="col-12 col-md-4 zone-livraison">
             <h1>Nos zones de livraison :</h1>
+            <h5 class="text-livraion">Livraison gratuite à domicile, au bureau sur Vauréal et ses régions</h5>
             <p>
                 <span>Cergy st Christophe</span><span> Cergy Le Haut</span>
                 <span>Vauréal</span> <span>Jouy Le Moutier</span> 
@@ -56,9 +59,12 @@
                     <p>
                         <?php
                         /* translators: 1: Theme name, 2: Theme author. */
-                        printf(esc_html__('%1$s by %2$s.', 'dro-alan-pizza'), 'Alan Pizza Theme ', '<a  title = "développeur web freelance maroc" href="https://github.com/younes-dro">Y&D</a>');
+                        printf(esc_html__('%1$s by %2$s.', 'dro-alan-pizza'), 'Alan Pizza Theme ', '<a  title = "développeur web freelance maroc" href="https://github.com/younes-dro">Younés DRO</a>');
                         ?>
                     </p>
+                    <h5 class="paiement-acceptee">Les paiements acceptés</h5>
+                    <p class="paiement-acceptee">payer votre pizza à vauréal par : Espèces, Ticket restaurant et Chèque-déjeuner. 
+                        Les CB sont acceptées en livraison (15 € mini) sur commande.</p>
                 </div><!-- .site-info -->
             </div><!-- ./col-12-->
         </div><!-- ./row -->
@@ -68,6 +74,60 @@
 </div><!-- #page -->
 <a href="#" class="scrollup"><i class="fa fa-arrow-up"></i></a>
 <?php wp_footer(); ?>
+<!--<style>
+    #flashNotice{
+        position: fixed;
+        height: auto;
+        background-color: rgba(255, 255, 255, 0.8);
+        color: rgb(0, 0, 0);
+        z-index: 999999999;
+        margin: 0px auto;
+        top: 0px;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        color: #fff;
+    }
+    .noticeContent{
+        background-color: hsla(8, 61%, 15%);
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+    }
+    .noticeContent h1{
+        color: #fff;
+        font-size: 1.3rem;
+    }
+    .closeFlash{
+        float: right;
+        width: 50px;
+        height: 50px;
+        color: #edeaea;
+        margin-right: 0px;
+        margin-top: 0;
+        font-size: 20px;
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid #edeaea;
+        margin-bottom: 10px;
+    }
+    @media screen and (min-width:992px){
+        .noticeContent{ width:  50%}
+        .noticeContent h1{font-size: 2rem;}
+
+    }
+</style>-->
+<!--<div id="flashNotice">
+    <div class="noticeContent">
+        <span class="closeFlash fa fa-close"></span>
+        <h1>Fermeture exceptionnelle aujourd'hui  </h1>
+        <p><h2>Samedi 09/11</h2> <p>
+        <p> <span class="fa fa-heart"> </span> <h2>Réouverture demain :  Dimanche 10/11 .</h2> </p>
+    </div>
+</div>-->
 
 </body>
 </html>

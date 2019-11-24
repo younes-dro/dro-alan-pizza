@@ -33,7 +33,7 @@ function get_senior_mega_price_options() {
             <div class="col-6 col-lg-6">
                 <div class="row">
                     <div class="col-12">
-                        <h1>MEGA</h1>
+                        <h1>FAMILIALE</h1>
                         <div class="row">
                             <div class="col-12">
                                 <h4>à emporter<span class="price">
@@ -83,11 +83,14 @@ if (!function_exists('dro_alan_pizza_fromagio')) {
                             ?>
                             <div class="col-12 col-lg-6 bg_fromagio" style="background-image: url('<?php echo $bg ?>')">
                                 <?php
-                                the_post_thumbnail();
+                                the_post_thumbnail('full');
                                 ?>
                             </div>
                             <div class="col-12 col-lg-6 fromagio-content">
-                                <span class="fromagio_price"><?php echo $fromagio_price['prix_fromagio'] ?>€</span>
+                                <?php if(!empty($fromagio_price['prix_fromagio'])):?>
+                                    <span class="fromagio_price"><?php echo $fromagio_price['prix_fromagio'] ?>€</span>
+                                <?php endif; ?>
+                                
                                 <?php the_content() ?>
                 <!--                                 <a  href="tel:+33670794050"><span class="modal-icon-phone"><i class="fa fa-phone-square"></i></span><span class="call-alanpizza">Appeler pour commander</span>
                                      <hr style="visibility: hidden; clear: both">
@@ -143,7 +146,7 @@ if (!function_exists('dro_alan_pizza_element_pizza')) {
                                 $meta = get_post_meta(get_the_ID(), '');
                                 ?>
 
-                                <a class="row details-element-pizza" href="#<?php echo basename(get_permalink()) ?>" data-toggle="modal" >
+                                <a class="row details-element-pizza" href="#pizzeria-de-vaureal-<?php echo basename(get_permalink()) ?>" data-toggle="modal" >
                                     <div class="col-12 unit-pizza">
                                         <div class="row">
                                             <div class="col-12">
@@ -254,7 +257,7 @@ function dro_alan_pizza_element_pizza_slick($args) {
 
 function display_modal($ID = '', $permlink = '', $the_title = '', $the_excerpt = '') {
     ?>
-    <div class="modal fade" style="z-index: 123999942222" id="<?php echo basename($permlink) ?>" tabindex="-1"  aria-labelledby="exampleModalLabel">
+    <div class="modal fade" style="z-index: 123999942222" id="pizzeria-de-vaureal-<?php echo basename($permlink) ?>" tabindex="-1"  aria-labelledby="exampleModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

@@ -32,15 +32,32 @@
                         </div><!-- .entry-meta -->
                     <?php endif; ?>
                     <?php
-                        // If the men has a price
-                        $price = get_post_meta(get_the_ID());
-                        if (!empty($price['price_apres_repas'][0])):
-                            echo '<span class="price-type-menu">' . $price['price_apres_repas'][0] . '€</span>';
-                        endif; 
-                        if (!empty($price['price_chiken_wings'][0])):
+                    // If the men has a price
+                    $price = get_post_meta(get_the_ID());
+                    if (!empty($price['price_apres_repas'][0])):
+                        echo '<span class="price-type-menu">' . $price['price_apres_repas'][0] . '€</span>';
+                    endif;
+                    if (!empty($price['price_chiken_wings'][0])):
+                        //Menu Switch
+                        if (get_the_ID() == 218) {
+                            echo '<div class="row">';
+
+                            echo '<div class="col-12">';
+                                echo '<h5 style="text-align:center;color:#fff;">à emporter</h5>';
+                                echo '<span class="price-type-menu">' . $price['price_chiken_wings'][0] . '€</span>';
+                            echo '</div>';
+                            
+                            echo '<div class="col-12">';
+                                echo '<h5 style="text-align:center;color:#fff">Livraison</h5>';
+                                echo '<span class="price-type-menu">7,50€</span>';
+                            echo '</div>';                            
+                            
+                            echo '</div>';
+                        } else {
                             echo '<span class="price-type-menu">' . $price['price_chiken_wings'][0] . '€</span>';
-                        endif;
-                        // Or , we retrive the global type menu price
+                        }
+                    endif;
+                    // Or , we retrive the global type menu price
 //                        var_dump(get_ter)
                     ?>
                 </header><!-- .entry-header -->

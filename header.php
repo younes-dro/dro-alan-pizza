@@ -35,8 +35,8 @@
                 <section class="phone">
                     <h1 class="phone-number">
                         <i class="fa fa-phone-square"></i>
-                        <a href="tel:<?php echo get_infos_options('tele_1')?>"><?php echo get_infos_options('tele_1')?></a>
-                        <a href="tel:<?php echo get_infos_options('tele_2')?>"><?php echo get_infos_options('tele_2')?></a>
+                        <a href="tel:<?php echo get_infos_options('tele_1') ?>"><?php echo get_infos_options('tele_1') ?></a>
+                        <a href="tel:<?php echo get_infos_options('tele_2') ?>"><?php echo get_infos_options('tele_2') ?></a>
                     </h1>
                 </section>
 
@@ -53,7 +53,7 @@
                 <?php endif; ?>
                 <?php if (get_header_image() && display_header_text()): ?>
                     <div class="site-branding header-background-image c" style="background-image: url(<?php header_image() ?>)">
-                        
+
                     <?php else: ?>
                         <div class="site-branding">
                         <?php endif; ?>
@@ -70,9 +70,14 @@
                             endif;
                             ?>
                         </div><!-- .title-box -->
-                        <!--<div class="header-background-image-overlay"></div>-->
-                            <?php get_senior_mega_price_options();?>
-                        
+                        <div class="paiement-mode">
+                            <img alt="Mode de paiement de pizza : carte banquaire et ticket restaurant" src="<?php echo CUSTOM_IMAGES_PATH?>/mode-paiemnet-pizza-a-vaureal.png">
+                        </div>
+                        <div class="pizza-halal">
+                            <img alt="Pizza Halal à Vauréal" src="<?php echo CUSTOM_IMAGES_PATH?>/pizza-halal-de-vaureal.png">
+                        </div>
+                        <?php get_senior_mega_price_options(); ?>
+
                     </div><!-- .site-branding -->
 
             </header><!-- #masthead -->
