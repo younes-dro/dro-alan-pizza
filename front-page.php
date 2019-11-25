@@ -8,7 +8,7 @@
  *
  * @package dro_caterer
  */
-get_header();
+get_header('front-page');
 ?>
 <div class="container-fluid">
     <div class="row">
