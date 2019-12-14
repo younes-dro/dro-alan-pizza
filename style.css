@@ -665,10 +665,10 @@ span.fa{
 }
 h5.horaire-overture,
 h5.text-livraion{
-  color: #fff;
-  font-size: .1rem;
-  margin: 0 auto;
-  padding: 0;
+    color: #fff;
+    font-size: .1rem;
+    margin: 0 auto;
+    padding: 0;
 }
 .horaire h1,
 .horaire h3,
@@ -873,14 +873,14 @@ footer .site-info p.paiement-acceptee{
     min-height: 200px;
 }
 .bg_fromagio img{
-    max-width: 100%;
+    max-width: 80%;
 }
 .fromagio-content{
     text-align: center;
 }
 .fromagio-content h1{
     /*font-family: 'Lato', sans-serif;*/
-    color: #000;
+    color: #fff;
     margin-top: 0;
 }
 .fromagio-content p{
@@ -910,6 +910,18 @@ footer .site-info p.paiement-acceptee{
     text-align: center;
 }
 @media screen and (min-width:992px){
+    .la-fromagio-wrapper{
+        padding: 6rem 4rem;
+    }
+    .bg_fromagio img{
+        max-width: 100%;
+    }
+    .fromagio-content h1{
+        /*font-family: 'Lato', sans-serif;*/
+        color: #fff;
+        margin-top: 0;
+        font-size: 4rem;
+    }
     .fromagio_price{
         width: 160px;
         height: 120px;
