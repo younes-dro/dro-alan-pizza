@@ -41,11 +41,11 @@
                 </section>
 
                 <?php the_custom_logo() ?>
-                
- <?php
-echo do_shortcode('[smartslider3 slider=3]');
-?>
 
+
+                <?php
+                echo do_shortcode('[smartslider3 slider=2]');
+                ?>
             </header><!-- #masthead -->
 
 
