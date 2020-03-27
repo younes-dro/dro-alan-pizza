@@ -74,7 +74,7 @@
 </div><!-- #page -->
 <a href="#" class="scrollup"><i class="fa fa-arrow-up"></i></a>
 <?php wp_footer(); ?>
-<!--<style>
+<style>
     #flashNotice{
         position: fixed;
         height: auto;
@@ -119,15 +119,13 @@
         .noticeContent h1{font-size: 2rem;}
 
     }
-</style>-->
-<!--<div id="flashNotice">
+</style>
+<div id="flashNotice">
     <div class="noticeContent">
         <span class="closeFlash fa fa-close"></span>
-        <h1>Fermeture exceptionnelle aujourd'hui  </h1>
-        <p><h2>Samedi 09/11</h2> <p>
-        <p> <span class="fa fa-heart"> </span> <h2>Réouverture demain :  Dimanche 10/11 .</h2> </p>
+        <p> <span class="fa fa-heart"> </span> <h2>Fermer pendant la période du confinement </h2> </p>
     </div>
-</div>-->
+</div>
 
 </body>
 </html>

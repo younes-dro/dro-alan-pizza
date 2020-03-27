@@ -91,21 +91,21 @@
     });
 
     /* Flash message */
-//    $(document).ready(function () {
-//
-//
-//        $('#flashNotice').fadeIn(function () {
-//            $('body').css("overflow", "hidden");
-//        });
-//
-//        $('#flashNotice, .closeFlash').on('click', function () {
-//            $('#flashNotice').fadeOut(function () {
-//                $('body').css("overflow", "visible");
-//            });
-//
-//        });
-//
-//    });
+    $(document).ready(function () {
+
+
+        $('#flashNotice').fadeIn(function () {
+            $('body').css("overflow", "hidden");
+        });
+
+        $('#flashNotice, .closeFlash').on('click', function () {
+            $('#flashNotice').fadeOut(function () {
+                $('body').css("overflow", "visible");
+            });
+
+        });
+
+    });
 
 })(jQuery);
 
