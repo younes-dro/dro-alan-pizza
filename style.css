@@ -538,6 +538,8 @@ p.site-description{
 }
 .unit-pizza.col-12{
     border: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top:10px;
+    padding-bottom: 10px;
 
 }
 .details-element-pizza .pizza-image img,
@@ -775,6 +777,8 @@ footer .site-info p.paiement-acceptee{
 }
 .archive div.article-inner-wrapper{
     border: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .archive .hentry {
     text-align: center;
