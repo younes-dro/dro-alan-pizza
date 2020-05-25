@@ -90,11 +90,14 @@
         color: #fff;
     }
     .noticeContent{
-        background-color: hsla(8, 61%, 15%);
+        background-color: hsl(260, 44%, 54%);
         width: 90%;
         margin: 0 auto;
         text-align: center;
         padding: 20px;
+    }
+    .noticeContent span.fa-star{
+        margin-right: 2px;
     }
     .noticeContent h1{
         color: #fff;
@@ -123,7 +126,10 @@
 <div id="flashNotice">
     <div class="noticeContent">
         <span class="closeFlash fa fa-close"></span>
-        <p> <span class="fa fa-heart"> </span> <h2>Fermer pendant la période du confinement </h2> </p>
+        <p> 
+            <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+        <h2>Réouverture lundi 25 Mai. </h2>
+    </p>
     </div>
 </div>
 

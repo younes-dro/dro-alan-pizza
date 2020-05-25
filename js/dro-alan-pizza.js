@@ -94,9 +94,9 @@
     $(document).ready(function () {
 
 
-        $('#flashNotice').fadeIn(function () {
-            $('body').css("overflow", "hidden");
-        });
+//        $('#flashNotice').fadeIn(function () {
+//            $('body').css("overflow", "hidden");
+//        });
 
         $('#flashNotice, .closeFlash').on('click', function () {
             $('#flashNotice').fadeOut(function () {
