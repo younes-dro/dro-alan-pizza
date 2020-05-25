@@ -767,6 +767,10 @@ footer .site-info p.paiement-acceptee{
 .archive .page-header > h1{
     position: relative;
 }
+.archive-description.text-muted{
+    color: #fff!important;
+    margin-bottom: 20px;
+}
 .archive-description p{
     font-size: 1.3rem;
     margin-top: 1rem;
