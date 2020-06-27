@@ -21,7 +21,7 @@ p{
 }
 .site-content{
     /*    padding: 10px 0 10px 0;*/
-    background-color: #303030;
+    background-color: #f5f5f5;
     position: relative;
 }
 .content-area-wrapper{
@@ -656,8 +656,8 @@ span.fa{
 }
 .horaire-zone-livraison-wrapper{
     background-color: #f5f5f5;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 4em;
+    padding-bottom: 4em
 }
 .horaire,
 .zone-livraison{
