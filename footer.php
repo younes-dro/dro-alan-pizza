@@ -128,7 +128,7 @@
 <span class="closeFlash fa fa-close"></span>
 <p> 
 <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
-</p><h2 style="font-family: Arial">Fermeture temporaire pour cause de congés du <strong>01/08</strong> au <strong>16/08</strong> </h2>
+</p><h2 style="font-family: Arial">Fermeture temporaire du <strong>01/08</strong> au <strong>16/08</strong> </h2>
 <p>merci de votre compréhension et a bientôt Chez AlanPizza</p>
 </div>
 </div>
