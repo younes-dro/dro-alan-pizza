@@ -86,7 +86,7 @@
         right: 0;
         width: 100%;
         height: 100%;
-        display: block;
+        display: none;
         color: #fff;
     }
     .noticeContent{
@@ -128,8 +128,8 @@
 <span class="closeFlash fa fa-close"></span>
 <p> 
 <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
-</p><h2 style="font-family: Arial">Fermeture temporaire du <strong>01/08</strong> au <strong>16/08</strong> </h2>
-<p>merci de votre compréhension et a bientôt Chez AlanPizza</p>
+</p><h2 style="font-family: Arial">Fermeture exceptionnelle pour travaux : <br> du <strong>Dimanche 01/11/2020</strong> <br> au <strong> Mardi 10/11/2020</strong> </h2>
+<p>merci de votre compréhension et à bientôt Chez AlanPizza</p>
 </div>
 </div>
 
