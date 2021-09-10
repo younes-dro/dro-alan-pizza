@@ -14,9 +14,11 @@
         <div class="col-12 col-md-1"></div>
         <div class="col-12 col-md-4  horaire">
             <h5 class="horaire-overture">horaire d'ouverture de pizzeria sur la ville de vauréal : </h5>
-            <h1>LUNDI AU VENDREDI DE 18H00 A 23H00</h1>
+            <!--<h1><b>LUNDI MATIN FERMÉ</b></h1>-->
             <!-- <h3>VENDREDI DE 18H00 A 23H00</h3> -->
-            <h3>SAMEDI ET DIMANCHE DE 11H45 A 15H00 / DE 18H00 A 23H00</h3>
+            <h1><b>OUVERT TOUS LES JOURS DE LA SEMAINE</b></h1>
+            <h3>LUNDI - VENDREDI: <blockquote>DE <b>11H30</b> À <b>14H30</b><br>DE <b>18H00</b> À <b>22H30</b></blockquote></h3>
+            <h3>SAMEDI - DIMANCHE:<blockquote>DE <b>11H30</b> À <b>15H00</b><br>DE <b>18H00</b> À <b>23H00</b></blockquote></h3>
         </div>
         <div class="col-12 col-md-2"></div>
         <div class="col-12 col-md-4 zone-livraison">
@@ -44,7 +46,10 @@
                         <img style="max-width: 150px" src="<?php echo CHILD_THEME_URI ?>/images//alan-pizza-logo-retina.png">
                     </div>
                     <div class="col-12">
-                        <p class="signature">Alan Pizza investit dans les meilleures produits et achète ses produits de base de chez les meilleurs fournisseurs, afin de vous garantir la qualité, et la fraicheur des Pizzas</p>
+                        <p class="signature">Alan Pizza investit dans les meilleures produits et achète ses produits de base de chez les meilleurs fournisseurs, afin de vous garantir la qualité, et la fraicheur des Pizzas
+                        <a href="https://stargps.ma/stargpsv2/solution-geo-tracking-pour-les-livreurs-coursiers-sur-motocycles/" title="Nous utilisons la solution de géolocalisation  GPS de la société marocaine StarGPS " style="color: #264D20;
+">Application mobile Géolocalisation par GPS des coursiers et livreurs sur motocycles</a>
+                        </p>
                     </div>
                 </div>
             </div><!-- ./col-12 col-md-4 -->
@@ -62,6 +67,7 @@
                         printf(esc_html__('%1$s by %2$s.', 'dro-alan-pizza'), 'Alan Pizza Theme ', '<a  title = "développeur web freelance maroc" href="https://github.com/younes-dro">Younés DRO</a>');
                         ?>
                     </p>
+                    
                     <h5 class="paiement-acceptee">Les paiements acceptés</h5>
                     <p class="paiement-acceptee">payer votre pizza à vauréal par : Espèces, Ticket restaurant et Chèque-déjeuner. 
                         Les CB sont acceptées en livraison (15 € mini) sur commande.</p>
@@ -128,7 +134,7 @@
 <span class="closeFlash fa fa-close"></span>
 <p> 
 <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
-</p><h2 style="font-family: Arial">Fermeture exceptionnelle pour travaux : <br> du <strong>Dimanche 01/11/2020</strong> <br> au <strong> Mardi 10/11/2020</strong> </h2>
+</p><h2 style="font-family: Arial">Fermeture exceptionnelle à l'occasion de L'Aïd al-Adha : <br> <strong>Mardi 20/07/2021</strong> <br> </h2>
 <p>merci de votre compréhension et à bientôt Chez AlanPizza</p>
 </div>
 </div>
