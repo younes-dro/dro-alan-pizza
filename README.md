@@ -1,9 +1,9 @@
 
 ## dro-alan-pizza 
-![AlanPizza](https://alan-pizza.fr/wp-content/uploads/2018/12/alan-pizza-logo-retina.png)
+![AlanPizza](https://alanpizza-vaureal.fr/wp-content/uploads/2018/12/alan-pizza-logo-retina.png)
 
 This is the source code for the theme of the Alan Pizza site. The theme aims to easily display the content, and facilitate customers to make their choice.
-See it in action  : [https://alan-pizza.fr](https://alan-pizza.fr/) .
+See it in action  : [https://alan-pizza.fr](https://alanpizza-vaureal.fr/).
 
 The theme is a child theme from  [dro-catrer](https://github.com/younes-dro/dro-catrer), a generic WordPress theme. 
 ### License
